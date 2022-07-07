@@ -1,0 +1,24 @@
+# The TIA - Team!
+
+trigger:
+- '*'
+
+schedules:
+  - cron: "0 * * * *"
+    displayName: Schedule job
+    branches:
+      include:
+      - master
+    always: true
+
+pool:
+  vmImage: $(agentImage)
+
+jobs:
+- job: LoadAgentNode1
+  displayName: CBM1
+  continueOnError: false
+  workspace:
+    clean: outputs
+  steps:
+    - template: NuevaEPSJob.yml
