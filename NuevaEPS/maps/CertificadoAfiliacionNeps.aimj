@@ -160,7 +160,7 @@
         },
         {
           Name: "Esperar",
-          Value: "3000",
+          Value: "5000",
           ActionType: "Sleep"
         },
         {
