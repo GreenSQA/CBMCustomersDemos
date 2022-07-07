@@ -3,7 +3,7 @@
 steps:
 
 - powershell: |
-         $destinationFolder = "$(Build.SourcesDirectory)/GyF/aimaps/aimaps-cli/win-x64n/selenium/"
+         $destinationFolder = "$(Build.SourcesDirectory)/GyF/aimaps/aimaps-cli/win-x64/selenium/"
          if (!(Test-Path -path $destinationFolder)) {New-Item $destinationFolder -Type Directory}
          Copy-Item 'C:/SeleniumWebDrivers/ChromeDriver/*' $destinationFolder -Force -Recurse
   displayName: 'Install web drivers'
