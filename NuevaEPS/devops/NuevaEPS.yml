@@ -4,11 +4,11 @@ trigger:
 - '*'
 
 schedules:
-  - cron: "*/60 * * * *"
+  - cron: "0 * * * *"
     displayName: Schedule job
     branches:
       include:
-      - master
+      - main
     always: true
 
 pool:
