@@ -3,7 +3,7 @@
 steps:
 
 - powershell: |
-         $destinationFolder = "$(Build.SourcesDirectory)/GyF/aimaps/aimaps-cli/win-x64/selenium/"
+         $destinationFolder = "$(Build.SourcesDirectory)/ATH/aimaps/aimaps-cli/win-x64-no-driver/selenium/"
          if (!(Test-Path -path $destinationFolder)) {New-Item $destinationFolder -Type Directory}
          Copy-Item 'C:/SeleniumWebDrivers/ChromeDriver/*' $destinationFolder -Force -Recurse
   displayName: 'Install web drivers'
@@ -20,7 +20,16 @@ steps:
       $vpnpassword = "9hg76j*23k71"
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
       $expression = "$cmd ""$vpnname"" $vpnusername $vpnpassword"
-      Invoke-Expression -Command $expression      
+      Invoke-Expression -Command $expression       
+  displayName: 'Conect to VPN GreenSQA '
+  timeoutInMinutes: 5
+  
+- task: PowerShell@2
+  condition: eq(variables['Agent.OS'], 'Windows_NT')
+  inputs:
+    pws: true
+    targetType: 'inline'
+    script: |          
       ./ATH/aimaps/aimaps-cli/win-x64-no-driver/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ATH/maps/Robot_Demo_ATH.aimj'
   displayName: 'Running robot - ATH '
-  timeoutInMinutes: 10
+  timeoutInMinutes: 5  
