@@ -1,8 +1,0 @@
-<testsuites>
-  <testsuite name="SuiteSimularEnvio">
-    <testcase classname="GreenSQA.AiMaps.CustomLogic.GMap+Monitor" name="SimularEnvio" time="55424.239" />
-    <testcase classname="GreenSQA.AiMaps.CustomLogic.GMap+Monitor" name="SimularEnvio" time="55513.954" />
-    <testcase classname="GreenSQA.AiMaps.CustomLogic.GMap+Monitor" name="SimularEnvio" time="55604.418" />
-    <testcase classname="GreenSQA.AiMaps.CustomLogic.GMap+Monitor" name="SimularEnvio" time="4.928" />
-  </testsuite>
-</testsuites>
