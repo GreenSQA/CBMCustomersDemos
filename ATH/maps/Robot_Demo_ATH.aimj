@@ -259,8 +259,13 @@
           SeLocatorString: "//span[@class = 'session-close-label']"
         },
         {
-          Name: "EsperarLogout",
+          Name: "Sleep",
           Value: "5000",
+          ActionType: "Sleep",
+          EvidenceOrder: "Before"
+        },
+        {
+          Name: "EsperarLogout",
           ActionType: "SeWaitForElement",
           CustomErrorMessage: "No se pudo completar el proceso de Logout correctamente",
           SeByLocator: "Id",
