@@ -44,6 +44,7 @@ steps:
       $vpnname = "greensqa"
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
       $disconnect = "$cmd ""$vpnname"" /disconnect"      
-      Invoke-Expression -Command $disconnect          
+      Invoke-Expression -Command $disconnect
+      Remove-VpnConnection -Name "greensqa" -Force      
   displayName: 'Disconnect to VPN'
   timeoutInMinutes: 5 
