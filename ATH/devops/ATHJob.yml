@@ -14,7 +14,7 @@ steps:
     pws: true
     targetType: 'inline'
     script: |
-      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -EncryptionLevel "Required" -AuthenticationMethod Eap -SplitTunneling -AllUserConnection -L2tpPsk "greensqa" -Force -RememberCredential -PassThru
+#      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -EncryptionLevel "Required" -AuthenticationMethod Eap -SplitTunneling -AllUserConnection -L2tpPsk "greensqa" -Force -RememberCredential -PassThru
       $vpnname = "greensqa@190.85.58.226"
       $vpnusername = "vpn88"
       $vpnpassword = "4wt46N501VpN"
