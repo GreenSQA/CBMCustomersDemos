@@ -14,8 +14,8 @@ steps:
     pws: true
     targetType: 'inline'
     script: |
-      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -L2tpPsk "greensqa" -Force -PassThru    
-      $vpnname = "greensqa@190.85.58.226"
+      Add-VpnConnection -Name "greensqa" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -L2tpPsk "greensqa" -Force -PassThru    
+      $vpnname = "greensqa"
       $vpnusername = "vpn88"
       $vpnpassword = "4wt46N501VpN"
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
@@ -23,7 +23,7 @@ steps:
       $disconnect = "$cmd ""$vpnname"" /disconnect"
       Invoke-Expression -Command $connect
       Invoke-Expression -Command $disconnect          
-  displayName: 'Conect to VPN'
+  displayName: 'Connect to VPN'
   timeoutInMinutes: 5
   
 #- task: PowerShell@2
@@ -34,4 +34,17 @@ steps:
 #    script: |          
 #      ./ATH/aimaps/aimaps-cli/win-x64-no-driver/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ATH/maps/Robot_Demo_ATH.aimj'
 #  displayName: 'Running robot - ATH '
-#  timeoutInMinutes: 5  
+#  timeoutInMinutes: 5 
+
+- task: PowerShell@2
+  condition: eq(variables['Agent.OS'], 'Windows_NT')
+  inputs:
+    pws: true
+    targetType: 'inline'
+    script: |  
+      $vpnname = "greensqa"
+      $cmd = $env:WINDIR + "\System32\rasdial.exe"
+      $disconnect = "$cmd ""$vpnname"" /disconnect"      
+      Invoke-Expression -Command $disconnect          
+  displayName: 'Disconnect to VPN'
+  timeoutInMinutes: 5 
