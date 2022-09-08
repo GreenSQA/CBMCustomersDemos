@@ -14,8 +14,8 @@ steps:
     pws: true
     targetType: 'inline'
     script: |
-      Add-VpnConnection -Name "greensqa" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -L2tpPsk "greensqa" -Force -PassThru    
-      $vpnname = "greensqa"
+      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -L2tpPsk "greensqa" -Force -PassThru    
+      $vpnname = "greensqa@190.85.58.226"
       $vpnusername = "vpn88"
       $vpnpassword = "4wt46N501VpN"
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
@@ -41,7 +41,7 @@ steps:
     pws: true
     targetType: 'inline'
     script: |  
-      $vpnname = "greensqa"
+      $vpnname = "greensqa@190.85.58.226"
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
       $disconnect = "$cmd ""$vpnname"" /disconnect"      
       Invoke-Expression -Command $disconnect
