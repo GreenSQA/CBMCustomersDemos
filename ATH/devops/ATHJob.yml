@@ -23,7 +23,7 @@ steps:
       $disconnect = "$cmd ""$vpnname"" /disconnect"
       Invoke-Expression -Command $connect                
   displayName: 'Connect to VPN'
-  timeoutInMinutes: 1
+  timeoutInMinutes: 5
   
 - task: PowerShell@2
   condition: eq(variables['Agent.OS'], 'Windows_NT')
@@ -47,4 +47,4 @@ steps:
       Invoke-Expression -Command $disconnect
       Remove-VpnConnection -Name "greensqa" -Force      
   displayName: 'Disconnect to VPN'
-  timeoutInMinutes: 1 
+  timeoutInMinutes: 5 
