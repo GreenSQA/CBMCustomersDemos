@@ -13,7 +13,8 @@
         {
           Name: "Navegar",
           Value: "http://10.130.2.89:7090/icbs-web/",
-          ActionType: "SeNavigateToAndMaximize"
+          ActionType: "SeNavigateToAndMaximize",
+          Timeout: 60
         },
         {
           Name: "EscribirUsuario",
