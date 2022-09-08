@@ -14,10 +14,10 @@ steps:
     pws: true
     targetType: 'inline'
     script: |
-      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -PassThru
+      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -L2tpPsk "greensqa" -PassThru
       $vpnname = "greensqa@190.85.58.226"
-      $vpnusername = "vpn41"
-      $vpnpassword = "9hg76j*23k71"
+      $vpnusername = "vpn88"
+      $vpnpassword = "4wt46N501VpN"
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
       $expression = "$cmd ""$vpnname"" $vpnusername $vpnpassword"
       Invoke-Expression -Command $expression       
