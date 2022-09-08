@@ -21,8 +21,7 @@ steps:
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
       $connect = "$cmd ""$vpnname"" $vpnusername $vpnpassword"
       $disconnect = "$cmd ""$vpnname"" /disconnect"
-      Invoke-Expression -Command $connect
-      Invoke-Expression -Command $disconnect          
+      Invoke-Expression -Command $connect                
   displayName: 'Connect to VPN'
   timeoutInMinutes: 5
   
