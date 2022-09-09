@@ -46,17 +46,14 @@
           Name: "CerrarPropaganda",
           ActionType: "SeClick",
           ThrowsError: false,
+          Timeout: 30,
           SeByLocator: "XPath",
           SeLocatorString: "//div[@title = 'Close']"
         },
         {
-          Name: "Sleep",
-          Value: "3000",
-          ActionType: "Sleep"
-        },
-        {
           Name: "EsperarSeccionUsuario",
           ActionType: "SeWaitForElement",
+          Timeout: 30,
           CustomErrorMessage: "No se pudo completar el proceso de Login",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@class = 'user-section']",
@@ -90,6 +87,7 @@
         {
           Name: "ClicPagosInscripciones",
           ActionType: "SeClick",
+          Timeout: 30,
           SeByLocator: "Name",
           SeLocatorString: "tabVueComponent",
           ElementSelectorIndex: "First with value equal to:Pagos e Inscripciones"
@@ -97,6 +95,7 @@
         {
           Name: "ClicPagoSinInscripcion",
           ActionType: "SeClick",
+          Timeout: 30,
           SeByLocator: "XPath",
           SeLocatorString: "//button[@class = 'btn btn-m ml-3 buttonPopOtherTx one-line size-new-service hide-print ui-button-pay btn-success']"
         },
@@ -134,15 +133,17 @@
         {
           Name: "Sleep",
           Value: "3000",
-          ActionType: "Sleep"
+          ActionType: "Sleep",
+          EvidenceOrder: "Before"
         },
         {
           Name: "EsperarEmpresas",
           ActionType: "SeWaitForElement",
+          Timeout: 30,
           CustomErrorMessage: "No aparecen las opciones de empresas para Gas Natural",
           SeByLocator: "XPath",
           SeLocatorString: "//td[@class = 'vuetable-slot']",
-          SeExplicitWait: "ElementIsVisible",
+          SeExplicitWait: "ElementToBeClickable",
           EvidenceTitle: "Consulta Empresa",
           EvidenceOrder: "After",
           EvidenceDescription: "Aparecieron las opciones de empresas para Gas Natural"
@@ -169,14 +170,14 @@
         },
         {
           Name: "EscribirNombreServicio",
-          Value: "Prueba23",
+          Value: "PruebaTIA",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "serviceName"
         },
         {
           Name: "EscribirIdentificadorServicio",
-          Value: "28004971",
+          Value: "3323334580",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "idService"
@@ -190,11 +191,13 @@
         {
           Name: "Sleep",
           Value: "3000",
-          ActionType: "Sleep"
+          ActionType: "Sleep",
+          EvidenceOrder: "Before"
         },
         {
           Name: "EsperaInformacionPago",
           ActionType: "SeWaitForElement",
+          Timeout: 30,
           CustomErrorMessage: "No se pude obtener la información de pago para la factura solicitada",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@style = 'display: inline-table; width: 100%;']",
@@ -234,15 +237,36 @@
           ElementSelectorIndex: "First with value equal to:Nombre Producto"
         },
         {
-          Name: "ClicBancoPopular",
+          Name: "ClicConvenio",
           ActionType: "SeClick",
-          CustomErrorMessage: "No se puede seleccionar banco popular",
           SeByLocator: "XPath",
           SeLocatorString: "//li[@class = 'multiselect__element']",
-          ElementSelectorIndex: "First with value starting with:AHO3802",
+          ElementSelectorIndex: "First with value starting with:AHO"
+        },
+        {
+          Name: "ClicContinuar",
+          ActionType: "SeClick",
+          SeByLocator: "Id",
+          SeLocatorString: "fiveContinue",
+          EvidenceOrder: "Before"
+        },
+        {
+          Name: "Sleep",
+          Value: "3000",
+          ActionType: "Sleep",
+          EvidenceOrder: "Before"
+        },
+        {
+          Name: "EsperarVolver",
+          ActionType: "SeWaitForElement",
+          Timeout: 30,
+          CustomErrorMessage: "No se pudo dar clic en pagar",
+          SeByLocator: "Id",
+          SeLocatorString: "Zone6",
+          SeExplicitWait: "ElementIsVisible",
           EvidenceTitle: "Pago",
           EvidenceOrder: "After",
-          EvidenceDescription: "Se selecciona banco popular"
+          EvidenceDescription: "Se dió clic en el botón realizar pago"
         }
       ]
     },
@@ -255,14 +279,9 @@
         {
           Name: "ClicLogout",
           ActionType: "SeClick",
+          Timeout: 60,
           SeByLocator: "XPath",
           SeLocatorString: "//span[@class = 'session-close-label']"
-        },
-        {
-          Name: "Sleep",
-          Value: "5000",
-          ActionType: "Sleep",
-          EvidenceOrder: "Before"
         },
         {
           Name: "EsperarLogout",

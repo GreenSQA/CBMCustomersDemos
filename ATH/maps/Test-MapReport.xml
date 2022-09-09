@@ -31,5 +31,74 @@
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="3.779" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_RealizarPago" time="2.001" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="1.458" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="23.033">
+      <failure message="Error (Login).(EscribirUsuario).SeClear() -- Action not executed for the element By.Id: CustLoginID - The page seems to be hang up while searching elements in 12000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="12.215">
+      <failure message="Error (Logout).(ClicLogout).SeClick() -- Action not executed for the element By.XPath: //span[@class = 'session-close-label'] - The page seems to be hang up while searching elements in 12000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="23.352">
+      <failure message="Error (Login).(EscribirUsuario).SeClear() -- Action not executed for the element By.Id: CustLoginID - The page seems to be hang up while searching elements in 12000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="12.173">
+      <failure message="Error (Logout).(ClicLogout).SeClick() -- Action not executed for the element By.XPath: //span[@class = 'session-close-label'] - The page seems to be hang up while searching elements in 12000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="52.412">
+      <failure message="No se pudo completar el proceso de Login" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="12.025">
+      <failure message="Error (Logout).(ClicLogout).SeClick() -- Action not executed for the element By.XPath: //span[@class = 'session-close-label'] - El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.Nombre del parámetro: index " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="29.73" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="16.956">
+      <failure message="Error (ConsultarEmpresa).(ClicPagosInscripciones).SeClick() -- Action not executed for the element By.Name: tabVueComponent - element click intercepted: Element &lt;a id=&quot;vueTab-1&quot; name=&quot;tabVueComponent&quot; type=&quot;hidden&quot; class=&quot;tab-item  &quot;&gt;...&lt;/a&gt; is not clickable at point (338, 192). Other element would receive the click: &lt;div class=&quot;position-absolute bg-light rounded-sm&quot; style=&quot;inset: 0px; opacity: 0.85; backdrop-filter: blur(2px);&quot;&gt;&lt;/div&gt;  (Session info: chrome=105.0.5195.102) " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="7.456" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="38.496" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="21.964" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="20.24">
+      <failure message="No se pude obtener la información de pago para la factura solicitada" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="6.471" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="21.064" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="14.463" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="30.691">
+      <failure message="No se pude obtener la información de pago para la factura solicitada" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="1.483" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="21.451" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="24.184" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="33.66">
+      <failure message="No se pude obtener la información de pago para la factura solicitada" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="4.329" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="36.798" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="35.705">
+      <failure message="Error (ConsultarEmpresa).(ClicPagoSinInscripcion).SeClick() -- Action not executed for the element By.XPath: //button[@class = 'btn btn-m ml-3 buttonPopOtherTx one-line size-new-service hide-print ui-button-pay btn-success'] - The page seems to be hang up while searching elements in 30000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="2.192" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="15.115" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="39.466">
+      <failure message="Error (ConsultarEmpresa).(ClicPagoSinInscripcion).SeClick() -- Action not executed for the element By.XPath: //button[@class = 'btn btn-m ml-3 buttonPopOtherTx one-line size-new-service hide-print ui-button-pay btn-success'] - The page seems to be hang up while searching elements in 30000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="1.608" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="37.342" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="40.849">
+      <failure message="Error (ConsultarEmpresa).(ClicPagoSinInscripcion).SeClick() -- Action not executed for the element By.XPath: //button[@class = 'btn btn-m ml-3 buttonPopOtherTx one-line size-new-service hide-print ui-button-pay btn-success'] - The page seems to be hang up while searching elements in 30000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="4.998" />
   </testsuite>
 </testsuites>
