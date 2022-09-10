@@ -3,6 +3,8 @@
   GlobalSourceCode: "\r\nprivate void SetupFuncMonitor()\r\n{\r\n  InitFunc();\r\n  \r\n  //Setup the project plan data\r\n  Func.ProjectInfo.CustomerId         = StepValStr(\"Monitor>CustomerId\");\r\n  Func.ProjectInfo.CustomerName       = StepValStr(\"Monitor>CustomerName\");\r\n  Func.ProjectInfo.ProjectId          = StepValStr(\"Monitor>ProjectId\");\r\n  Func.ProjectInfo.ProjectName        = StepValStr(\"Monitor>ProjectName\");\r\n  Func.ProjectInfo.IterationId        = StepValStr(\"Monitor>IterationId\");\r\n  Func.ProjectInfo.TestCaseId         = StepValStr(\"Monitor>TestCaseId\") + \"-\" + StringUtility.RandomString(4); \r\n  Func.ProjectInfo.ApplicationVersion = StepValStr(\"Monitor>ApplicationVersion\");\r\n  Func.ProjectInfo.TechnologyApp      = \"Web\"; //Change this with the proper value\r\n  \r\n  //Setup the project details\r\n  Func.ProjectInfo.GsqaService           = GsqaService.ATM; //TIA;ATM;Services\r\n  Func.ProjectInfo.HumanRelationRate     = StepValDouble(\"Monitor>HumanRelationRate\"); \r\n  Func.ProjectInfo.DeploymentEnvironment = DevEnvironment.QA; //DEV;QA;STG;PRD\r\n  Func.ProjectInfo.IsGreenHeartPrdMode   = StepValBool(\"Monitor>IsGreenHeartPrdMode\");\r\n  \r\n  ResetStartTime();\r\n}\r\n",
   RobotAuthor: "cgordillo",
   SeleniumBrowser: "Chrome",
+  SeleniumScreenHeight: 720,
+  SeleniumScreenWidth: 1280,
   Stages: [
     {
       Name: "Login",
@@ -133,8 +135,7 @@
         {
           Name: "Sleep",
           Value: "3000",
-          ActionType: "Sleep",
-          EvidenceOrder: "Before"
+          ActionType: "Sleep"
         },
         {
           Name: "EsperarEmpresas",
@@ -191,8 +192,7 @@
         {
           Name: "Sleep",
           Value: "3000",
-          ActionType: "Sleep",
-          EvidenceOrder: "Before"
+          ActionType: "Sleep"
         },
         {
           Name: "EsperaInformacionPago",
@@ -247,14 +247,12 @@
           Name: "ClicContinuar",
           ActionType: "SeClick",
           SeByLocator: "Id",
-          SeLocatorString: "fiveContinue",
-          EvidenceOrder: "Before"
+          SeLocatorString: "fiveContinue"
         },
         {
           Name: "Sleep",
           Value: "3000",
-          ActionType: "Sleep",
-          EvidenceOrder: "Before"
+          ActionType: "Sleep"
         },
         {
           Name: "EsperarVolver",
