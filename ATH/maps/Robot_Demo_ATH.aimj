@@ -3,6 +3,8 @@
   GlobalSourceCode: "\r\nprivate void SetupFuncMonitor()\r\n{\r\n  InitFunc();\r\n  \r\n  //Setup the project plan data\r\n  Func.ProjectInfo.CustomerId         = StepValStr(\"Monitor>CustomerId\");\r\n  Func.ProjectInfo.CustomerName       = StepValStr(\"Monitor>CustomerName\");\r\n  Func.ProjectInfo.ProjectId          = StepValStr(\"Monitor>ProjectId\");\r\n  Func.ProjectInfo.ProjectName        = StepValStr(\"Monitor>ProjectName\");\r\n  Func.ProjectInfo.IterationId        = StepValStr(\"Monitor>IterationId\");\r\n  Func.ProjectInfo.TestCaseId         = StepValStr(\"Monitor>TestCaseId\") + \"-\" + StringUtility.RandomString(4); \r\n  Func.ProjectInfo.ApplicationVersion = StepValStr(\"Monitor>ApplicationVersion\");\r\n  Func.ProjectInfo.TechnologyApp      = \"Web\"; //Change this with the proper value\r\n  \r\n  //Setup the project details\r\n  Func.ProjectInfo.GsqaService           = GsqaService.ATM; //TIA;ATM;Services\r\n  Func.ProjectInfo.HumanRelationRate     = StepValDouble(\"Monitor>HumanRelationRate\"); \r\n  Func.ProjectInfo.DeploymentEnvironment = DevEnvironment.QA; //DEV;QA;STG;PRD\r\n  Func.ProjectInfo.IsGreenHeartPrdMode   = StepValBool(\"Monitor>IsGreenHeartPrdMode\");\r\n  \r\n  ResetStartTime();\r\n}\r\n",
   RobotAuthor: "cgordillo",
   SeleniumBrowser: "Chrome",
+  SeleniumScreenHeight: 720,
+  SeleniumScreenWidth: 1280,
   Stages: [
     {
       Name: "Login",
@@ -18,7 +20,7 @@
         },
         {
           Name: "EscribirUsuario",
-          Value: "AUPruebas",
+          Value: "ADMrecaudos2",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "CustLoginID"
@@ -73,6 +75,7 @@
         {
           Name: "ClicTransacciones",
           ActionType: "SeClick",
+          Timeout: 30,
           SeByLocator: "XPath",
           SeLocatorString: "//span[@class = 'ui-menu-h3-text']",
           ElementSelectorIndex: "First with value equal to:Transacciones"
@@ -80,6 +83,7 @@
         {
           Name: "ClicServiciosPublicos",
           ActionType: "SeClick",
+          Timeout: 30,
           SeByLocator: "XPath",
           SeLocatorString: "//a[@class = 'ui-menu-a']",
           ElementSelectorIndex: "First with value containing:Servicios"
@@ -102,6 +106,7 @@
         {
           Name: "ClicTipoEmpresa",
           ActionType: "SeClick",
+          Timeout: 30,
           SeByLocator: "XPath",
           SeLocatorString: "//div[@class = 'multiselect clearfix multiSelectAvv category-w']"
         },
@@ -289,6 +294,12 @@
           EvidenceTitle: "Logout",
           EvidenceOrder: "After",
           EvidenceDescription: "Se completó el proceso de Logout correctamente"
+        },
+        {
+          Name: "Sleep",
+          Value: "3000",
+          ActionType: "Sleep",
+          EvidenceOrder: "Before"
         },
         {
           Name: "KillDriver",
