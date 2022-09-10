@@ -11,9 +11,9 @@ schedules:
       - main
     always: true
 
-pool:
-  vmImage: $(agentImage)
-#pool: GreenHeartDemosAgent
+#pool:
+#  vmImage: $(agentImage)
+pool: GreenHeartDemosAgent
 
 jobs:
 - job: LoadAgentNode1
