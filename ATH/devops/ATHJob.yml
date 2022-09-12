@@ -14,13 +14,12 @@ steps:
     pws: true
     targetType: 'inline'
     script: |
-      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -L2tpPsk "greensqa" -Force -PassThru    
+      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -L2tpPsk '$(vpn-l2tpsk)' -Force -PassThru    
       $vpnname = "greensqa@190.85.58.226"
-      $vpnusername = "vpn42"
-      $vpnpassword = "1hr05h*81g82"
+      $vpnusername = '$(vpn-user-name)'
+      $vpnpassword = '$(vpn-password)'
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
       $connect = "$cmd ""$vpnname"" $vpnusername $vpnpassword"
-      $disconnect = "$cmd ""$vpnname"" /disconnect"
       Invoke-Expression -Command $connect                
   displayName: 'Connect to VPN'
   timeoutInMinutes: 5
