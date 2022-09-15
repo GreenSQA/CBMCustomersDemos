@@ -16,11 +16,7 @@
           Name: "Navegar",
           Value: "http://10.130.2.89:7090/icbs-web/",
           ActionType: "SeNavigateToAndMaximize",
-          Timeout: 60,
-          CustomErrorMessage: "No se pudo navegar al sitio web",
-          EvidenceTitle: "Disponibilidad Sitio",
-          EvidenceOrder: "After",
-          EvidenceDescription: "Se pudo navegar correctamente al sitio web"
+          Timeout: 60
         },
         {
           Name: "Sleep",
