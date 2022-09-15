@@ -152,5 +152,18 @@
       <failure message="Error (Logout).(ClicLogout).SeClick() -- Action not executed for the element By.XPath: //span[@class = 'session-close-label'] - El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.Nombre del parámetro: index " type="ERROR">
       </failure>
     </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="41.831">
+      <failure message="Ejecución abortada por el usuario!" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="0.004">
+      <failure message="Ejecución abortada por el usuario!" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="32.607" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="14.356" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="3.715" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_RealizarPago" time="4.8" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="7.419" />
   </testsuite>
 </testsuites>

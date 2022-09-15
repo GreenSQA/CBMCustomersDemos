@@ -21,8 +21,7 @@
         {
           Name: "Sleep",
           Value: "6000",
-          ActionType: "Sleep",
-          EvidenceOrder: "Before"
+          ActionType: "Sleep"
         },
         {
           Name: "EscribirUsuario",
