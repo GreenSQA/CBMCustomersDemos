@@ -47,6 +47,7 @@
         {
           Name: "ClicContinuar",
           ActionType: "SeClick",
+          Timeout: 30,
           SeByLocator: "Id",
           SeLocatorString: "btnContinuar"
         },
@@ -89,7 +90,6 @@
         {
           Name: "ClicServiciosPublicos",
           ActionType: "SeClick",
-          Timeout: 30,
           SeByLocator: "XPath",
           SeLocatorString: "//a[@class = 'ui-menu-a']",
           ElementSelectorIndex: "First with value containing:Servicios"
@@ -286,13 +286,14 @@
         {
           Name: "ClicLogout",
           ActionType: "SeClick",
-          Timeout: 60,
+          Timeout: 30,
           SeByLocator: "XPath",
           SeLocatorString: "//span[@class = 'session-close-label']"
         },
         {
           Name: "EsperarLogout",
           ActionType: "SeWaitForElement",
+          Timeout: 30,
           CustomErrorMessage: "No se pudo completar el proceso de Logout correctamente",
           SeByLocator: "Id",
           SeLocatorString: "formLogin",
