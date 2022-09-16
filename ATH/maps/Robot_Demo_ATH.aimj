@@ -45,6 +45,13 @@
           SeLocatorString: "xXSignonPswd"
         },
         {
+          Name: "Cancelar",
+          ActionType: "SeClick",
+          SeByLocator: "Id",
+          SeLocatorString: "btnCancelar",
+          EvidenceOrder: "Before"
+        },
+        {
           Name: "ClicContinuar",
           ActionType: "SeClick",
           ThrowsError: false,
