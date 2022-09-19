@@ -194,7 +194,7 @@
         },
         {
           Name: "EscribirIdentificadorServicio",
-          Value: "3323334580",
+          Value: "100007",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "idService"
