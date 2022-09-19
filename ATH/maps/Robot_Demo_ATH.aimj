@@ -157,13 +157,13 @@
           Name: "EsperarEmpresas",
           ActionType: "SeWaitForElement",
           Timeout: 30,
-          CustomErrorMessage: "No aparecen las opciones de empresas para ETB",
+          CustomErrorMessage: "No aparecen las opciones de empresas",
           SeByLocator: "XPath",
           SeLocatorString: "//td[@class = 'vuetable-slot']",
           SeExplicitWait: "ElementToBeClickable",
           EvidenceTitle: "Consulta Empresa",
           EvidenceOrder: "After",
-          EvidenceDescription: "Aparecieron las opciones de empresas para Gas Natural"
+          EvidenceDescription: "Aparecieron las opciones de empresas para ETB Telefonía"
         }
       ]
     },
