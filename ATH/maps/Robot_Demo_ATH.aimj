@@ -157,7 +157,7 @@
           Name: "EsperarEmpresas",
           ActionType: "SeWaitForElement",
           Timeout: 30,
-          CustomErrorMessage: "No aparecen las opciones de empresas para Gas Natural",
+          CustomErrorMessage: "No aparecen las opciones de empresas para ETB",
           SeByLocator: "XPath",
           SeLocatorString: "//td[@class = 'vuetable-slot']",
           SeExplicitWait: "ElementToBeClickable",
