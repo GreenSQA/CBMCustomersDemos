@@ -200,6 +200,13 @@
           SeLocatorString: "idService"
         },
         {
+          Name: "EsperarConsultar",
+          ActionType: "SeWaitForElement",
+          SeByLocator: "Id",
+          SeLocatorString: "thirdContinue",
+          SeExplicitWait: "ElementToBeClickable"
+        },
+        {
           Name: "ClicConsultar",
           ActionType: "SeClick",
           SeByLocator: "Id",
