@@ -132,7 +132,7 @@
         },
         {
           Name: "EscribirTipoEmpresa",
-          Value: "Gas Natural",
+          Value: "etb",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "valueService"
@@ -194,7 +194,7 @@
         },
         {
           Name: "EscribirIdentificadorServicio",
-          Value: "100007",
+          Value: "181141714",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "idService"
