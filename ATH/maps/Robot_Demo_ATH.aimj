@@ -20,7 +20,7 @@
         },
         {
           Name: "Sleep",
-          Value: "10000",
+          Value: "15000",
           ActionType: "Sleep"
         },
         {
@@ -304,6 +304,11 @@
           SeLocatorString: "//span[@class = 'session-close-label']"
         },
         {
+          Name: "Sleep",
+          Value: "3000",
+          ActionType: "Sleep"
+        },
+        {
           Name: "EsperarLogout",
           ActionType: "SeWaitForElement",
           Timeout: 30,
@@ -314,11 +319,6 @@
           EvidenceTitle: "Logout",
           EvidenceOrder: "After",
           EvidenceDescription: "Se completó el proceso de Logout correctamente"
-        },
-        {
-          Name: "Sleep",
-          Value: "3000",
-          ActionType: "Sleep"
         },
         {
           Name: "KillDriver",
