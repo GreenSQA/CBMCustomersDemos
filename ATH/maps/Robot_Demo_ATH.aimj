@@ -53,6 +53,7 @@
           Name: "ClicContinuar",
           ActionType: "SeClick",
           ThrowsError: false,
+          Timeout: 60,
           SeByLocator: "Id",
           SeLocatorString: "btnContinuar"
         },
