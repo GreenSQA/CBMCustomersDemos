@@ -147,7 +147,7 @@
         },
         {
           Name: "EscribirTipoEmpresa",
-          Value: "etb",
+          Value: "gas natural",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "valueService"
@@ -178,7 +178,7 @@
           SeExplicitWait: "ElementToBeClickable",
           EvidenceTitle: "Consulta Empresa",
           EvidenceOrder: "After",
-          EvidenceDescription: "Aparecieron las opciones de empresas para ETB Telefonía"
+          EvidenceDescription: "Aparecieron las opciones de empresas"
         }
       ]
     },
@@ -209,7 +209,7 @@
         },
         {
           Name: "EscribirIdentificadorServicio",
-          Value: "10001798974667",
+          Value: "2323334581",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "idService"
