@@ -98,6 +98,7 @@
           Name: "ClicTransacciones",
           ActionType: "SeClick",
           Timeout: 30,
+          CustomErrorMessage: "No se puede dar clic en transacciones",
           SeByLocator: "XPath",
           SeLocatorString: "//span[@class = 'ui-menu-h3-text']",
           ElementSelectorIndex: "First with value equal to:Transacciones"
@@ -106,6 +107,7 @@
           Name: "ClicServiciosPublicos",
           ActionType: "SeClick",
           Timeout: 30,
+          CustomErrorMessage: "No aparece la opción de servicios públicos",
           SeByLocator: "XPath",
           SeLocatorString: "//a[@class = 'ui-menu-a']",
           ElementSelectorIndex: "First with value containing:Servicios"
@@ -114,6 +116,7 @@
           Name: "ClicPagosInscripciones",
           ActionType: "SeClick",
           Timeout: 30,
+          CustomErrorMessage: "No se puede dar clic en pagos e inscripciones",
           SeByLocator: "Name",
           SeLocatorString: "tabVueComponent",
           ElementSelectorIndex: "First with value equal to:Pagos e Inscripciones"
@@ -122,6 +125,7 @@
           Name: "ClicPagoSinInscripcion",
           ActionType: "SeClick",
           Timeout: 30,
+          CustomErrorMessage: "No se puede dar clic en pagos sin inscripción",
           SeByLocator: "XPath",
           SeLocatorString: "//button[@class = 'btn btn-m ml-3 buttonPopOtherTx one-line size-new-service hide-print ui-button-pay btn-success']"
         },
@@ -129,12 +133,14 @@
           Name: "ClicTipoEmpresa",
           ActionType: "SeClick",
           Timeout: 30,
+          CustomErrorMessage: "No se puede dar clic en tipo de empresa",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@class = 'multiselect clearfix multiSelectAvv category-w']"
         },
         {
           Name: "ClicTipoServiciosPublicos",
           ActionType: "SeClick",
+          CustomErrorMessage: "No aparecen las opciones de tipos de empresa en la lista desplegable",
           SeByLocator: "XPath",
           SeLocatorString: "//span[@class = 'multiselect__option']",
           ElementSelectorIndex: "First with value equal to:Servicios publicos"
@@ -230,7 +236,7 @@
           Name: "EsperaInformacionPago",
           ActionType: "SeWaitForElement",
           Timeout: 30,
-          CustomErrorMessage: "No se pude obtener la información de pago para la factura solicitada",
+          CustomErrorMessage: "No se puede obtener la información de pago para la factura solicitada",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@style = 'display: inline-table; width: 100%;']",
           SeExplicitWait: "ElementIsVisible",
