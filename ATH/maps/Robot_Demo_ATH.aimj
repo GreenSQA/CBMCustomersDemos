@@ -324,7 +324,7 @@
         {
           Name: "ClicLogout",
           ActionType: "SeClick",
-          Timeout: 60,
+          Timeout: 120,
           CustomErrorMessage: "No se puede dar clic en el botón de logout",
           SeByLocator: "XPath",
           SeLocatorString: "//span[@class = 'session-close-label']"
