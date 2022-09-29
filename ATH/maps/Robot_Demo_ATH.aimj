@@ -38,7 +38,7 @@
         },
         {
           Name: "EscribirClave",
-          Value: "Bogota22",
+          Value: "GreenSQA22",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "xXSignonPswd"
