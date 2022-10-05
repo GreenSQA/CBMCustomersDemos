@@ -170,5 +170,21 @@
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="3.745" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_RealizarPago" time="4.424" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="35.088" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="35.839" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="19.602" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="3.779" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_RealizarPago" time="4.513" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="120.073">
+      <failure message="No se puede dar clic en el botón de logout" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="36.266" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="24.727" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="3.835" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_RealizarPago" time="35.671">
+      <failure message="No se pudo dar clic en pagar" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="8.573" />
   </testsuite>
 </testsuites>

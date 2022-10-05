@@ -1,0 +1,440 @@
+{
+  Name: "Robot_Demo_ATH_Bogota",
+  GlobalSourceCode: "\r\nprivate void SetupFuncMonitor()\r\n{\r\n  InitFunc();\r\n  \r\n  //Setup the project plan data\r\n  Func.ProjectInfo.CustomerId         = StepValStr(\"Monitor>CustomerId\");\r\n  Func.ProjectInfo.CustomerName       = StepValStr(\"Monitor>CustomerName\");\r\n  Func.ProjectInfo.ProjectId          = StepValStr(\"Monitor>ProjectId\");\r\n  Func.ProjectInfo.ProjectName        = StepValStr(\"Monitor>ProjectName\");\r\n  Func.ProjectInfo.IterationId        = StepValStr(\"Monitor>IterationId\");\r\n  Func.ProjectInfo.TestCaseId         = StepValStr(\"Monitor>TestCaseId\") + \"-\" + StringUtility.RandomString(4); \r\n  Func.ProjectInfo.ApplicationVersion = StepValStr(\"Monitor>ApplicationVersion\");\r\n  Func.ProjectInfo.TechnologyApp      = \"Web\"; //Change this with the proper value\r\n  \r\n  //Setup the project details\r\n  Func.ProjectInfo.GsqaService           = GsqaService.ATM; //TIA;ATM;Services\r\n  Func.ProjectInfo.HumanRelationRate     = StepValDouble(\"Monitor>HumanRelationRate\"); \r\n  Func.ProjectInfo.DeploymentEnvironment = DevEnvironment.QA; //DEV;QA;STG;PRD\r\n  Func.ProjectInfo.IsGreenHeartPrdMode   = StepValBool(\"Monitor>IsGreenHeartPrdMode\");\r\n  \r\n  ResetStartTime();\r\n}\r\n",
+  RobotAuthor: "cgordillo",
+  SeleniumBrowser: "Chrome (Headless)",
+  SeleniumScreenHeight: 720,
+  SeleniumScreenWidth: 1280,
+  Stages: [
+    {
+      Name: "Login",
+      SourceCode: "\r\n//RunAt:Desktop\r\nbool IController.Execute()\r\n{\r\n  return true;\r\n}",
+      Type: "Windows",
+      Image: "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",
+      Steps: [
+        {
+          Name: "Navegar",
+          Value: "http://10.130.2.85:7090/icbs-web/",
+          ActionType: "SeNavigateToAndMaximize",
+          Timeout: 120
+        },
+        {
+          Name: "Sleep",
+          Value: "15000",
+          ActionType: "Sleep"
+        },
+        {
+          Name: "EscribirUsuario",
+          Value: "PaulaBBTA",
+          ActionType: "SeClear",
+          SeByLocator: "Id",
+          SeLocatorString: "CustLoginID"
+        },
+        {
+          Name: "ClicCheckBox",
+          ActionType: "SeClick",
+          SeByLocator: "Id",
+          SeLocatorString: "disableImageButton"
+        },
+        {
+          Name: "EscribirClave",
+          Value: "greensqa22",
+          ActionType: "SeClear",
+          SeByLocator: "Id",
+          SeLocatorString: "xXSignonPswd"
+        },
+        {
+          Name: "Cancelar",
+          ActionType: "SeClick",
+          SeByLocator: "Id",
+          SeLocatorString: "btnCancelar"
+        },
+        {
+          Name: "ClicContinuar",
+          ActionType: "SeClick",
+          ThrowsError: false,
+          Timeout: 30,
+          SeByLocator: "Id",
+          SeLocatorString: "btnContinuar"
+        },
+        {
+          Name: "EsperarSeccionUsuario",
+          ActionType: "SeWaitForElement",
+          Timeout: 120,
+          CustomErrorMessage: "No se pudo completar el proceso de Login",
+          SeByLocator: "XPath",
+          SeLocatorString: "//div[@class = 'user-section']",
+          SeExplicitWait: "ElementIsVisible",
+          EvidenceTitle: "Login",
+          EvidenceOrder: "After",
+          EvidenceDescription: "El proceso de Login se completó exitosamente"
+        },
+        {
+          Name: "CerrarPropaganda",
+          ActionType: "SeClick",
+          ThrowsError: false,
+          Timeout: 120,
+          SeByLocator: "XPath",
+          SeLocatorString: "//div[@title = 'Close']"
+        }
+      ]
+    },
+    {
+      Name: "ConsultarEmpresa",
+      SourceCode: "\r\n//RunAt:Desktop\r\nbool IController.Execute()\r\n{\r\n  return true;\r\n}",
+      Type: "Windows",
+      Image: "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",
+      Steps: [
+        {
+          Name: "EsperarTransacciones",
+          ActionType: "SeWaitForElement",
+          Timeout: 30,
+          SeByLocator: "XPath",
+          SeLocatorString: "//span[@class = 'ui-menu-h3-text']",
+          SeExplicitWait: "ElementToBeClickable",
+          ElementSelectorIndex: "First with value equal to:Transacciones"
+        },
+        {
+          Name: "ClicTransacciones",
+          ActionType: "SeClick",
+          Timeout: 30,
+          CustomErrorMessage: "No se puede dar clic en transacciones",
+          SeByLocator: "XPath",
+          SeLocatorString: "//span[@class = 'ui-menu-h3-text']",
+          ElementSelectorIndex: "First with value equal to:Transacciones"
+        },
+        {
+          Name: "ClicServiciosPublicos",
+          ActionType: "SeClick",
+          Timeout: 30,
+          CustomErrorMessage: "No aparece la opción de servicios públicos",
+          SeByLocator: "XPath",
+          SeLocatorString: "//a[@class = 'ui-menu-a']",
+          ElementSelectorIndex: "First with value containing:Servicios"
+        },
+        {
+          Name: "ClicPagosInscripciones",
+          ActionType: "SeClick",
+          Timeout: 30,
+          CustomErrorMessage: "No se puede dar clic en pagos e inscripciones",
+          SeByLocator: "Name",
+          SeLocatorString: "tabVueComponent",
+          ElementSelectorIndex: "First with value equal to:Pagos e Inscripciones"
+        },
+        {
+          Name: "ClicPagoSinInscripcion",
+          ActionType: "SeClick",
+          Timeout: 30,
+          CustomErrorMessage: "No se puede dar clic en pagos sin inscripción",
+          SeByLocator: "XPath",
+          SeLocatorString: "//button[@class = 'btn btn-m ml-3 buttonPopOtherTx one-line size-new-service hide-print ui-button-pay btn-success register']"
+        },
+        {
+          Name: "ClicTipoEmpresa",
+          ActionType: "SeClick",
+          Timeout: 30,
+          CustomErrorMessage: "No se puede dar clic en tipo de empresa",
+          SeByLocator: "XPath",
+          SeLocatorString: "//div[@class = 'multiselect clearfix multiSelectAvv category-w']"
+        },
+        {
+          Name: "ClicTipoServiciosPublicos",
+          ActionType: "SeClick",
+          CustomErrorMessage: "No aparecen las opciones de tipos de empresa en la lista desplegable",
+          SeByLocator: "XPath",
+          SeLocatorString: "//span[@class = 'multiselect__option']",
+          ElementSelectorIndex: "First with value equal to:Servicios publicos"
+        },
+        {
+          Name: "EscribirTipoEmpresa",
+          Value: "etb",
+          ActionType: "SeClear",
+          SeByLocator: "Id",
+          SeLocatorString: "valueService"
+        },
+        {
+          Name: "ClicConsultar",
+          ActionType: "SeClick",
+          SeByLocator: "Id",
+          SeLocatorString: "firstConsult"
+        },
+        {
+          Name: "ScrollDown",
+          Value: "500",
+          ActionType: "SeScrollDown"
+        },
+        {
+          Name: "Sleep",
+          Value: "3000",
+          ActionType: "Sleep"
+        },
+        {
+          Name: "EsperarEmpresas",
+          ActionType: "SeWaitForElement",
+          Timeout: 30,
+          CustomErrorMessage: "No aparecen las opciones de empresas",
+          SeByLocator: "XPath",
+          SeLocatorString: "//td[@class = 'vuetable-slot']",
+          SeExplicitWait: "ElementToBeClickable",
+          EvidenceTitle: "Consulta Empresa",
+          EvidenceOrder: "After",
+          EvidenceDescription: "Aparecieron las opciones de empresas"
+        }
+      ]
+    },
+    {
+      Name: "ValidarInformacionPago",
+      SourceCode: "\r\n//RunAt:Desktop\r\nbool IController.Execute()\r\n{\r\n  return true;\r\n}",
+      Type: "Windows",
+      Image: "iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAYAAADOCEoKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABIeSURBVHhe7d3Pq3VXfcdx/xO16CADJYMOHYiTDgpNBwUHwYITHQgOhQ6DkSAItUVF0mpURMS00jQIqUhjsRmkDSTUgIqlSHmqNETFXwhOjs/HnO999l137b3XWnutvX693/ABc597zzn3Pne/7j4/7uObLjRkP/vt65enXv305ZXXXrq+hWg/QBgww+BTL3/8DwMFCg0QBsvFABQoJkAYqDUMbKBAewHCIO1hYAMF2goQBigUAxso0FqA0HmxGNhAgXwBQselYmADBXIDhE47ioENFGgZIHRYLgxsoEAWIHRWbgxsoEAKEDqqFAY2UCBA6KTSGNhAYe4AoYPOwsAGCvMGCI13NgY2UJgzQGi4WhjYQGG+AKHRamNgA4W5AoQGawUDGyjMEyA0VmsY2EBhjgChoVrFwAYK4wcIjdQ6BjZQGDtAaKBeMLCBwrgBQuV6w8AGCmMGCBXrFQMbKIwXIFSqdwxsoDBWgFChUTCwgcI4AcLJjYaBDRTGCBBObFQMbKDQf4BwUqNjYAOFvgOEE5oFAxso9BsgFG42DGyg0GeAULBZMbCBQn8BQqFmx8AGCn0FCAUCg9sDhX4ChMyBgX+g0EeAkDEw2B4otB8gZAoMwgYKbQcIGQKDuIFCuwHCwcAgbaDQZoBwIDA4NlBoL0BIDAzyDBTaChASAoO8A4V2AoTIwKDMnvn+P1y/wlQzQIgIDMrsg9949PLOT7318sS3H7t+palWgBAYGJSZYWADhboBQkBgUGYuBqBQP0DYCQzKbA0DGyjUCRA2AoMy28PABgrnBwgrgUGZhWJgA4VzAwRPYFBmsRjYQOG8AMEJDMosFQMbKJwTICwCgzI7ioENFMoHCNfAoMxyYWADhbIBwv3AoMxyY2ADhXJNDwIYlFkpDGygUKapQQCDMiuNgQ0U8jctCGBQZmdhYAOFvE0JAhiU2dkY2EAhX9OBAAZlVgsDGyjkaSoQwKDMamNgA4XjTQXCiz/5d+83NEtfKxho7/ibP7p84cXPXf+2KaXp7jJ85963vN/YLH6tYfDQ42+7PPTRt1+++OJT179tim3KBxVB4fhaxcAGCmlNCYIChfS1jgEopDctCAoU4tcLBjZQiGtqEBQohK83DGygEN70IChQ2F+vGNhAISxAuAYK6+sdAxso7AcIi0Dh7kbBwAYK2wGCEyg82GgY2EBhPUDwBArjYmADBX+AsNLMKIyOgQ0U7gYIG82IwiwY2J584bPXv21SgLDTTCjMhoHtiX/52PVvmwAhoBlQmBUDGyi8ESAENjIKs2NgAwVAiGpEFMDg9mZHARAiGwkFMPBvZhQAIaERUACD7c2KAiAk1jMKYBC2GVEAhAP1iAIYxG02FADhYD2hAAZpmwkFQMhQDyiAwbHNggIgZKplFMAgz2ZAARAy1iIKYJB3o6MACJlrCYX3/fMj9w/Et9w5MGtsBAxsI6MACAVqAYVHn/mzy8N//+bLw38nEOqiMBIGtlFRAIRC1UThBgNbRRRGxMA2IgqAULAaKNzBoCIKI2NgGw0FQCjcmSisYmA7EYUZMLCNhAIgnNAZKOxiYDsBhZkwsI2CAiCcVEkUgjGwFURhRgxsI6AACCdWAoVoDGwFUJgZA1vvKADCyeVEIRkDW0YUwODBekYBECqUA4XDGNgyoAAGd9crCoBQqSMoZMPAdgAFMFhfjygAQsVSUMiOgS0BBTDYX28oAELlYlAohoEtAgUwCF9PKABCA4WgUBwDWwAKYBC/XlAAhEbaQuE0DGwbKIBB+npAARAayofC6RjYPCiAwfG1jgIgNNYShWoY2BYogEG+tYwCIDSYUKiOge0+Cu/427eCQea1igIgNNgrr710eeTpd/sP0LP35JsBocAAgYISBnaXoToK9zHgLkP+cZeBglpiUB2FBQY8qJhvPKhIQfkwsJ2OggcDUDi+1jFQgNBAWxjYTkNhAwMbKMSvBwwUIFQuBANbcRQCMLCBQvh6wUABQsViMLAVQyECAxso7K8nDBQgVCoFA1t2FBIwsIHC+nrDQAFChY5gYMuGwgEMbKBwdz1ioADh5HJgYDuMQgYMbKDwYL1ioADhxHJiYEtGISMGNlDoGwMFCCdVAgNbNAoFMLDNjELvGChAOKGSGNiCUSiIgW1GFEbAQAFC4c7AwLaLwgkY2GZCYRQMFCAU7EwMbKsonIiBbQYURsJAAUKhamBgu4NCBQxsI6MwGgYKEApUEwPbDQoVMbCNiMKIGChAyFwLGNj+/GvvuX9A1sXANhIKo2KgACFjLWFge/Trj3gP0BobAYWRMVCAkKkWMbCBQp6NjoEChAy1jIENFI5tBgwUIBysBwxsoJC2WTBQgHCgnjCwgULcZsJAAUJiPWJgA4WwzYaBAoSEesbABgrbmxEDBQiRjYCBDRT8mxUDBQgRjYSBDRRub2YMFCAENiIGNlB4Y7NjoAAhoJExsM2OAhi8ESDsNAMGtllRAIMHAcJGM2Fgmw0FMLgdIKw0Iwa2WVAAg7sBgqeZMbCNjgIY+AMEJzB4sFFRAIP1AGERGNzdaCiAwXaAcA0M1jcKCmCwHyDcDwz21zsKYBDW9CCAQfh6RQEMwpsaBDCIX28ogEFc04IABunrBQUwiG9KEMDg+FpHAQzSmg4EMMi3VlEAg/SmAuHV11/2fmOz9LWGwuPPPXb926aUpgLhZ799/fLUq5/2fmOz9LWCwoef/cD1b5pSm+4uAyiUWW0UwCBPUz6oCAplVgsFMMjXlCAoUCizs1EAg7xNC4IChTI7CwUwyN/UIChQKLPSKIBBmaYHQYFCmZVCAQzKBQjXQKHMcqMABmUDhEWgUGa5UACD8gGCEyiU2VEUwOCcAMETKJRZKgpgcF6AsBIolFksCmBwboCwESiUWSgKYHB+gLATKJTZHgpgUCdACAgUymwNBTCoFyAEBgpl5qIABnUDhIhAocwMBTCoHyBEBgqF9uInrl9hqhkgJAQKefede9+6fmWpdoCQGCjkGRi0FSAcCBSODQzaCxAOBgppA4M2A4QMgULcwKDdACFToBA2MGg7QMgYKGwPDNoPEDIHCv6BQR8BQoFA4fbAoJ8AoVCg8MbAoK8AoWCzowAG/QUIhZsVBTDoM0A4odlQAIN+A4STmgUFMOg7QDix0VEAg/4DhJMbFQUwGCNAqNBoKIDBOAFCpUZBAQzGChAq1jsKYDBegFC5XlEAgzEDhAbqDQUwGDdAaKReUACDsQOEhmodBTAYP0BorFZRAIM5AoQGaw0FMJgnQGi0VlAAg7kChIarjQIYzBcgNF4tFMBgzgChg85GAQzmDRA66SwUwGDuAKGjSqMABgQInVUKBTAgBQgdlhsFMCALEDotFwpgQMsAoeOOogAG5AYInZeKAhiQL0AYoFgUwIDWAoRBCkUBDGgrQBioPRTAgPYChMFaQwEMKCRAGDAXBTCg0ABh0AwFMKCYAGHgfv27X13/F1FYgEBENwECEd0ECER0EyAQ0U2AQEQ3AQIR3QQIRHQTIBDRTd2C8P+/+fGt1+ov98L/PX99r7S+99Pvei93b8//73PXS/D3+HOPXR766Nvv7I8//vDl3s/vXd8rvVfuvey9fE3XTbRXtyDooPcdlNpXvve563uldTYIWo4D9sNPf8h72RogUEjdgvCFVz/jPShtOoNIrQYIR88Sts4ONECgkLoE4Ue/+G/vAbncN3/07PW946sBgnbkoP2rZz7ivUwbIFBIXYKgg315IOpsQXcT3Lfl7OkffOnW5Wux7YGQepagj9HH+i7TBggUUpcgPPlfn7x1YAoI32MK+kmfqxIgvPfzf3F59yffdettKQeu73KX/60BAoXUHQivvPbSnQNTdyF8zzp843/+8fpRxysFwpMvfPbW22LPEtyzA/3vr/znl29dpgYIFFJ3IOggXx6Uy2cU/umHX731ZzqTyFUpEJR7liAkQnNB0TMNz373mVtv0wCBQuoKhF/97pd3Dsrlaw7+4ycv3PlzvS1HJUFwD2oBEZqLiZ5tOAqCLkNnGfqY93/5L713QbQ//cyf/OHP9H7/9sNvXz86f7otgk7Xt7x+XbceTNXtPZquQ5ely3Qfj9HX2D5PfW1HrisQfAf88ulFHxg6a8hRSRCU+00YcpbgOztQR0BwgYmZPp/YA0Yf416GpYM09PboYE55QDbmOmz6u9LXuiSCteoKBPeg1H+7uXcbNEFxtNIguH+mb9K93G9k+0l5BAT341IWc5fHB4IObPftIdMZRAwKWy/kCt1odQOC70FD390B34OOOe42lAbBfXBQ2zqw9JNt+b52dqBqg6Dp9oXkHvhCzv06xEx3cULKgYE2Wt2A4Htace0nv/u05NGXMqvSIKiYswT3QFrej84Fgn7i6lRcB7d7eizAdD36c98BrLeF/LTeOxPQ1+Cv//UTt65fl6vbtPaxe2co7l0tm5DQ57S83fZ56uvnPoahjVY3ILgvVd56bMB9JkI78lJmdQYI+uYLOUtwD3j3p+IREHQA6n1jHqjT7fYdLCF3HdYOat2OkI/3/aTfglTpz5fvr6956OMBer/ldY5WFyD4XqqsuwZr+V56vPey4r3OAEHpJ+7yfXzf3O5BJACWHQEhNQHiXufybsxaPhBiHyAUiO5lrN1l8d3OEHjcBIMQHK0uQHBfqhzy+gL3jOLoS5nPAsH3Dbs84N0/911GDRCUe2D6bpubC0LIx7jFYOT72rigzlwXILgHd8grEF1ENJ1ppHYWCMo9DV6+n/tnvm/mWiCEfn7LcoCg3Lssa3cbfF+b0AdAZ6h5EHzPGoT8joLvbsaRlzKfCcLaWULI2YFqBQRtr1wg+K7bd7fD97UJfWZihpoHwX2AMObU3/0NyCMvZT4TBOU7Swg5O1AlQNB9Zv0k1eVoOoh0m7Stpwn30scv33/ra7KVbtvycrS1r4/v9up6Qx9YHLmmQdDTir7fbAzN91Tl1oORW50Ngr45l++rLb+Rtx5JzwWCHmzTgb91wO9tr1wg+D7ntbsC7gO3yy2fatUZ2Ww1DYLvpcoxjwP4XsyU+lLms0FQ7sGy3NYj40dB0PP+RxBYbq+SIKx9zror4T71uDZ9HXSbdFkznEE0DYLvZcg5lvJS5hog+L7Jta2zA5UKgg4U31N4R7ZXDRCUfvr7XjuxN33tU56m7KVmQfD9dM+1lJcy1wBBuQeMtvcNmQrCHga6LTqd1mXplFrXo9mptfv5aXvVAsHS1zL0bGE53c6Y10r0UrMgbP2rykeX8lLmWiC43+h7Zwcq5eDQgeF+jBbzE7E1EGJ+kuvugO4qxTxmknpbW65ZENxnCHIv9qXMtUBQy1PbkG/yFBB8p89rL+5ZqzUQ9LbU9NPfnlXZumsRg04PNQmC7zUEy38IJTbfaxliX8pcE4TYUkBw3z/lttUEwXfdOZ8l0GW5t1XTGcVINQmC71WGR/9NA/fpy9iXMo8Mgu/9dfocW00Q3Mc/Qu5axeZ7dkJ3L0aqSRDclyrn+FePfL8BGfMU5mwg6G2x1QJBB+ryMrTYuzuh+V7DMFLNgVDqHzjxXW7MS5lnAyHlvnEtEHwHaQpoIaV8jj3VHAi+n+Q5/gk05Z55xLyUeWQQcvyE1XX6nr7b6ygIvs916zL0dRAgqU8ZHr29rdcUCL6XKue4u2D5HpsIfSnz6A8q+h5JD/kpqwfb3N+xWG4v9wATKqGvCNSzAL6nCLdut/0d6OMEQ8wDjzprcq8r5bGWlmsKBN9LlVN/98BX6G9AnvX/7dgSCL5vdk0Hu3uA6SDS+29BYNvLBcEmoHSw+a5bEKx9nA7yrdy/A03XpbfrulwghJM+V9/1CZXUM41WawoE96XKR347cS33boPm3iWZEQS19Xx7yHwfv9fagZ0yXf9ePhBS52I1Qs2A4HupcsyDfqH57ja4D1rOCoJ+2qWgYKf5voNtr1wg6Gwl5Ke1zjp8Hx8znRnoLGXEmgEh568qb+WDR48PLJsVBKWDKvQXnHRg6HLtQMwBgp2++x4b8E3vF/uMiL4+AiT0OpbTx8U87tBbTd1loHayg8Z95kAHrN4eexCu5YKwRNIep3DPWnSbhFaO22AvT9b1+p4l0XXrunRmMTIEFiBQ1bZAoPMDBKoaILQVIFDVAKGtAIGqBghtBQhUNUBoK0CgqgFCWwECVQ0Q2goQqGqA0FaAQFUDhJa6XH4PJdOzOKzedK0AAAAASUVORK5CYII=",
+      Steps: [
+        {
+          Name: "SeleccionarEmpresa",
+          ActionType: "SeClick",
+          SeByLocator: "XPath",
+          SeLocatorString: "//div[@class = 'dinamicRadio custom-control custom-radio ratioList ratioElement-1']"
+        },
+        {
+          Name: "ClicContinuar",
+          ActionType: "SeClick",
+          SeByLocator: "Id",
+          SeLocatorString: "secondContinue"
+        },
+        {
+          Name: "EscribirNombreServicio",
+          Value: "PruebaTIA",
+          ActionType: "SeClear",
+          SeByLocator: "Id",
+          SeLocatorString: "serviceName"
+        },
+        {
+          Name: "EscribirIdentificadorServicio",
+          Value: "10001798974851",
+          ActionType: "SeClear",
+          SeByLocator: "Id",
+          SeLocatorString: "idService"
+        },
+        {
+          Name: "EsperarConsultar",
+          ActionType: "SeWaitForElement",
+          SeByLocator: "Id",
+          SeLocatorString: "thirdContinue",
+          SeExplicitWait: "ElementToBeClickable"
+        },
+        {
+          Name: "ClicConsultar",
+          ActionType: "SeClick",
+          SeByLocator: "Id",
+          SeLocatorString: "thirdContinue"
+        },
+        {
+          Name: "Sleep",
+          Value: "3000",
+          ActionType: "Sleep"
+        },
+        {
+          Name: "EsperaInformacionPago",
+          ActionType: "SeWaitForElement",
+          Timeout: 30,
+          CustomErrorMessage: "No se puede obtener la información de pago para la factura solicitada",
+          SeByLocator: "XPath",
+          SeLocatorString: "//div[@style = 'display: inline-table; width: 100%;']",
+          SeExplicitWait: "ElementIsVisible",
+          ElementSelectorIndex: "2",
+          EvidenceTitle: "Validación pago",
+          EvidenceOrder: "After",
+          EvidenceDescription: "Aparece la  información de pago para la factura solicitada"
+        }
+      ]
+    },
+    {
+      Name: "RealizarPago",
+      SourceCode: "\r\n//RunAt:Desktop\r\nbool IController.Execute()\r\n{\r\n  return true;\r\n}",
+      Type: "Windows",
+      Image: "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",
+      Steps: [
+        {
+          Name: "ClicTipoProducto",
+          ActionType: "SeClick",
+          SeByLocator: "XPath",
+          SeLocatorString: "//span[@class = 'multiselect__single']",
+          ElementSelectorIndex: "First with value equal to:Tipo Producto"
+        },
+        {
+          Name: "ClicCuentaAhorros",
+          ActionType: "SeClick",
+          SeByLocator: "XPath",
+          SeLocatorString: "//li[@class = 'multiselect__element']",
+          ElementSelectorIndex: "First with value equal to:Cuenta Ahorros"
+        },
+        {
+          Name: "ClicNombreProducto",
+          ActionType: "SeClick",
+          SeByLocator: "XPath",
+          SeLocatorString: "//span[@class = 'multiselect__single']",
+          ElementSelectorIndex: "First with value equal to:Nombre Producto"
+        },
+        {
+          Name: "ClicConvenio",
+          ActionType: "SeClick",
+          SeByLocator: "XPath",
+          SeLocatorString: "//li[@class = 'multiselect__element']",
+          ElementSelectorIndex: "First with value starting with:AHO"
+        },
+        {
+          Name: "ClicContinuar",
+          ActionType: "SeClick",
+          SeByLocator: "Id",
+          SeLocatorString: "fiveContinue"
+        },
+        {
+          Name: "EscribirClave",
+          Value: "greensqa22",
+          ActionType: "SeClear",
+          ThrowsError: false,
+          SeByLocator: "Id",
+          SeLocatorString: "input-token",
+          EvidenceOrder: "Before"
+        },
+        {
+          Name: "ClicConfirmar",
+          ActionType: "SeClick",
+          ThrowsError: false,
+          SeByLocator: "Id",
+          SeLocatorString: "btnConfirmTokenKey",
+          EvidenceOrder: "Before"
+        },
+        {
+          Name: "Cerrar",
+          ActionType: "SeClick",
+          ThrowsError: false,
+          SeByLocator: "XPath",
+          SeLocatorString: "//button[@class='close']",
+          ElementSelectorIndex: "2",
+          EvidenceOrder: "Before"
+        },
+        {
+          Name: "Sleep",
+          Value: "3000",
+          ActionType: "Sleep"
+        },
+        {
+          Name: "EsperarVolver",
+          ActionType: "SeWaitForElement",
+          Timeout: 30,
+          CustomErrorMessage: "No se pudo dar clic en pagar",
+          SeByLocator: "Id",
+          SeLocatorString: "Zone6",
+          SeExplicitWait: "ElementIsVisible",
+          EvidenceTitle: "Pago",
+          EvidenceOrder: "After",
+          EvidenceDescription: "Se dió clic en el botón realizar pago"
+        }
+      ]
+    },
+    {
+      Name: "Logout",
+      SourceCode: "\r\n//RunAt:Desktop\r\nbool IController.Execute()\r\n{\r\n  return true;\r\n}",
+      Type: "Windows",
+      Image: "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",
+      Steps: [
+        {
+          Name: "EsperarClicLogout",
+          ActionType: "SeWaitForElement",
+          Timeout: 60,
+          CustomErrorMessage: "No aparece el botón de logout",
+          SeByLocator: "XPath",
+          SeLocatorString: "//span[@class = 'session-close-label']",
+          SeExplicitWait: "ElementToBeClickable"
+        },
+        {
+          Name: "ClicLogout",
+          ActionType: "SeClick",
+          Timeout: 120,
+          CustomErrorMessage: "No se puede dar clic en el botón de logout",
+          SeByLocator: "XPath",
+          SeLocatorString: "//span[@class = 'session-close-label']"
+        },
+        {
+          Name: "Sleep",
+          Value: "3000",
+          ActionType: "Sleep"
+        },
+        {
+          Name: "EsperarLogout",
+          ActionType: "SeWaitForElement",
+          Timeout: 30,
+          CustomErrorMessage: "No se pudo completar el proceso de Logout correctamente",
+          SeByLocator: "Id",
+          SeLocatorString: "formLogin",
+          SeExplicitWait: "ElementToBeClickable",
+          EvidenceTitle: "Logout",
+          EvidenceOrder: "After",
+          EvidenceDescription: "Se completó el proceso de Logout correctamente"
+        },
+        {
+          Name: "KillDriver",
+          ActionType: "SeKillDriver"
+        }
+      ]
+    },
+    {
+      Name: "Monitor",
+      SourceCode: "//RunAt:Desktop\r\nbool IController.Execute()\r\n{\r\n  k.SetupFuncMonitor();\r\n  //k.SetPageLoadTimeoutMilliseconds(50000);\r\n  \r\n  k.TestSuiteName = \"ICBS\";\r\n \r\n  k.RunDependingTests(k.NewTest(A_Login,BeforeLogin,AfterLogin), k.NewTest(B_ConsultarEmpresa), k.NewTest(C_ValidarInformacionPago), k.NewTest(D_RealizarPago));\r\n  \r\n  k.RunTest(E_Logout,BeforeLogout);\r\n  \r\n  return true;\r\n}\r\n\r\nprivate void BeforeLogin()\r\n{\r\n  k.RunDependingActionsWithRetry(2, \"Login>Navegar\", \"Login>Sleep\", \"Login>EscribirUsuario\");\r\n  k.RunDependingActionsWithRetry(2, \"Login>ClicCheckBox\");\r\n  k.RunDependingActionsWithRetry(2, \"Login>EscribirClave\");\r\n}\r\n\r\n[MetricsInfo(ExcellentTime = 30000,  ToleratingTime = 60000)]\r\nprivate void A_Login()\r\n{\r\n  k.Run(\"Login>ClicContinuar\");\r\n  k.Run(\"Login>EsperarSeccionUsuario\");\r\n}\r\n\r\nprivate void AfterLogin()\r\n{\r\n  k.Run(\"Login>CerrarPropaganda\");\r\n  k.Sleep(15000);\r\n}\r\n\r\n[MetricsInfo(ExcellentTime = 30000,  ToleratingTime = 60000)]\r\nprivate void B_ConsultarEmpresa()\r\n{\r\n  k.Run(\"ConsultarEmpresa\", true);\r\n}\r\n\r\n[MetricsInfo(ExcellentTime = 30000,  ToleratingTime = 60000)]\r\nprivate void C_ValidarInformacionPago()\r\n{\r\n  k.Run(\"ValidarInformacionPago\", true);\r\n}\r\n\r\n[MetricsInfo(ExcellentTime = 30000,  ToleratingTime = 60000)]\r\nprivate void D_RealizarPago()\r\n{\r\n  k.Run(\"RealizarPago\", true);\r\n}\r\n\r\nprivate void BeforeLogout()\r\n{\r\n  //k.Run(\"Login>CerrarPropaganda\");\r\n  k.Sleep(5000);\r\n}\r\n\r\n[MetricsInfo(ExcellentTime = 30000,  ToleratingTime = 60000)]\r\nprivate void E_Logout()\r\n{\r\n  k.Run(\"Logout\", true);\r\n}\r\n",
+      Type: "Windows",
+      Image: "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",
+      Steps: [
+        {
+          Name: "CustomerId",
+          Value: "999",
+          ActionType: "None"
+        },
+        {
+          Name: "CustomerName",
+          Value: "ATH",
+          ActionType: "None"
+        },
+        {
+          Name: "ProjectId",
+          Value: "999",
+          ActionType: "None"
+        },
+        {
+          Name: "ProjectName",
+          Value: "PagoConvenioICBS",
+          ActionType: "None"
+        },
+        {
+          Name: "IterationId",
+          Value: "01",
+          ActionType: "None"
+        },
+        {
+          Name: "TestCaseId",
+          Value: "ICBS",
+          ActionType: "None"
+        },
+        {
+          Name: "ApplicationVersion",
+          Value: "1.0.0",
+          ActionType: "None"
+        },
+        {
+          Name: "BotName",
+          Value: "ICBS",
+          ActionType: "None"
+        },
+        {
+          Name: "HumanRelationRate",
+          Value: "2.5",
+          ActionType: "None"
+        },
+        {
+          Name: "IsGreenHeartPrdMode",
+          Value: "false",
+          ActionType: "None"
+        }
+      ]
+    }
+  ]
+}

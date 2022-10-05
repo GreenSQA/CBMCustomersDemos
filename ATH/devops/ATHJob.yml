@@ -30,7 +30,7 @@ steps:
     pws: true
     targetType: 'inline'
     script: |          
-      ./ATH/aimaps/aimaps-cli/win-x64-no-driver/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ATH/maps/Robot_Demo_ATH.aimj'
+      ./ATH/aimaps/aimaps-cli/win-x64-no-driver/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ATH/maps/Robot_Demo_ATH_Bogota.aimj'
   displayName: 'Running robot - ATH '
   timeoutInMinutes: 10 
 
