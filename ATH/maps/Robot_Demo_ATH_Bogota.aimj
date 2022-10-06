@@ -348,7 +348,8 @@
         {
           Name: "ClicLogout",
           ActionType: "SeClick",
-          Timeout: 120,
+          ThrowsError: false,
+          Timeout: 60,
           CustomErrorMessage: "No se puede dar clic en el botón de logout",
           SeByLocator: "XPath",
           SeLocatorString: "//span[@class = 'session-close-label']"
@@ -361,7 +362,7 @@
         {
           Name: "EsperarLogout",
           ActionType: "SeWaitForElement",
-          Timeout: 30,
+          Timeout: 60,
           CustomErrorMessage: "No se pudo completar el proceso de Logout correctamente",
           SeByLocator: "Id",
           SeLocatorString: "formLogin",
