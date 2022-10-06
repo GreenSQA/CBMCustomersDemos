@@ -186,5 +186,11 @@
       </failure>
     </testcase>
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="8.573" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="10.398" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="53.654">
+      <failure message="No se puede dar clic en pagos sin inscripción" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="10.16" />
   </testsuite>
 </testsuites>
