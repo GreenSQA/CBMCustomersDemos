@@ -285,6 +285,7 @@
         {
           Name: "ClicContinuar",
           ActionType: "SeClick",
+          CustomErrorMessage: "No se pudo da clic en el botón de pago",
           SeByLocator: "Id",
           SeLocatorString: "fiveContinue"
         },
