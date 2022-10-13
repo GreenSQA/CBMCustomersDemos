@@ -192,5 +192,10 @@
       </failure>
     </testcase>
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="10.16" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="20.89" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="14.942" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="3.803" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_RealizarPago" time="16.322" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="40.185" />
   </testsuite>
 </testsuites>
