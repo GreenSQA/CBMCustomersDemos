@@ -16,7 +16,8 @@
           Name: "Navegar",
           Value: "http://10.130.2.85:7090/icbs-web/",
           ActionType: "SeNavigateToAndMaximize",
-          Timeout: 120
+          Timeout: 120,
+          CustomErrorMessage: "No se pudo navegar al sitio web"
         },
         {
           Name: "Sleep",
@@ -27,12 +28,14 @@
           Name: "EscribirUsuario",
           Value: "PaulaBBTA",
           ActionType: "SeClear",
+          CustomErrorMessage: "No se puede escribir el usuario",
           SeByLocator: "Id",
           SeLocatorString: "CustLoginID"
         },
         {
           Name: "ClicCheckBox",
           ActionType: "SeClick",
+          CustomErrorMessage: "no se puede dar clic en el checkbox",
           SeByLocator: "Id",
           SeLocatorString: "disableImageButton"
         },
@@ -40,6 +43,7 @@
           Name: "EscribirClave",
           Value: "Greensqa22",
           ActionType: "SeClear",
+          CustomErrorMessage: "No se puede escribir la clave",
           SeByLocator: "Id",
           SeLocatorString: "xXSignonPswd"
         },
