@@ -1,7 +1,7 @@
 # The TIA - Team!
 
 variables:
-- group: TIAKeyVault
+- group: ATHKeyVault
 
 trigger:
 - '*'
