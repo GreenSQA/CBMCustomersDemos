@@ -22,13 +22,13 @@
         {
           Name: "Sleep",
           Value: "10000",
-          ActionType: "Sleep",
-          EvidenceOrder: "Before"
+          ActionType: "Sleep"
         },
         {
           Name: "EscribirUsuario",
           Value: "PaulaBBTA",
           ActionType: "SeClear",
+          Timeout: 30,
           CustomErrorMessage: "No se puede escribir el usuario",
           SeByLocator: "Id",
           SeLocatorString: "CustLoginID"
@@ -36,6 +36,7 @@
         {
           Name: "ClicCheckBox",
           ActionType: "SeClick",
+          Timeout: 30,
           CustomErrorMessage: "no se puede dar clic en el checkbox",
           SeByLocator: "Id",
           SeLocatorString: "disableImageButton"
@@ -44,6 +45,7 @@
           Name: "EscribirClave",
           Value: "Greensqa22",
           ActionType: "SeClear",
+          Timeout: 30,
           CustomErrorMessage: "No se puede escribir la clave",
           SeByLocator: "Id",
           SeLocatorString: "xXSignonPswd"
