@@ -7,7 +7,7 @@ trigger:
 - '*'
 
 schedules:
-  - cron: "0 8-18/1 * * 1-5/1"
+  - cron: "0 13-23 * * 1-5"
     displayName: Schedule job
     branches:
       include:
