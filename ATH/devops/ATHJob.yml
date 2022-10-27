@@ -2,11 +2,11 @@
 
 steps:
 
-#- powershell: |
-#         $destinationFolder = "$(Build.SourcesDirectory)/ATH/aimaps/aimaps-cli/win-x64-no-driver/selenium/"
-#         if (!(Test-Path -path $destinationFolder)) {New-Item $destinationFolder -Type Directory}
-#         Copy-Item 'C:/SeleniumWebDrivers/ChromeDriver/*' $destinationFolder -Force -Recurse
-#  displayName: 'Install web drivers'
+- powershell: |
+      $destinationFolder = "$(Build.SourcesDirectory)/ATH/aimaps/aimaps-cli/win-x64-no-driver/selenium/"
+      if (!(Test-Path -path $destinationFolder)) {New-Item $destinationFolder -Type Directory}
+      Copy-Item 'C:/SeleniumWebDrivers/ChromeDriver/*' $destinationFolder -Force -Recurse
+  displayName: 'Install web drivers'
   
 - task: PowerShell@2
   condition: eq(variables['Agent.OS'], 'Windows_NT')
@@ -20,30 +20,10 @@ steps:
       $vpnpassword = '$(vpn-password)'
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
       $connect = "$cmd ""$vpnname"" $vpnusername $vpnpassword"
-      Invoke-Expression -Command $connect                
-  displayName: 'Connect to VPN'
-  timeoutInMinutes: 5
-  
-- task: PowerShell@2
-  condition: eq(variables['Agent.OS'], 'Windows_NT')
-  inputs:
-    pws: true
-    targetType: 'inline'
-    script: |          
+      Invoke-Expression -Command $connect
       ./ATH/aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ATH/maps/Robot_Demo_ATH_Bogota.aimj'
-  displayName: 'Running robot - ATH '
-  timeoutInMinutes: 20 
-
-- task: PowerShell@2
-  condition: eq(variables['Agent.OS'], 'Windows_NT')
-  inputs:
-    pws: true
-    targetType: 'inline'
-    script: |  
-      $vpnname = "greensqa@190.85.58.226"
-      $cmd = $env:WINDIR + "\System32\rasdial.exe"
-      $disconnect = "$cmd ""$vpnname"" /disconnect"      
+      $disconnect = "$cmd ""$vpnname"" /disconnect"
       Invoke-Expression -Command $disconnect
-      Remove-VpnConnection -Name "greensqa@190.85.58.226" -Force      
-  displayName: 'Disconnect to VPN'
-  timeoutInMinutes: 5 
+      Remove-VpnConnection -Name "greensqa@190.85.58.226" -Force     
+  displayName: 'Running robot - ATH'
+  timeoutInMinutes: 20
