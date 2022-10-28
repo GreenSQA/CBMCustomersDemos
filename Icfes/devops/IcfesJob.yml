@@ -14,6 +14,6 @@ steps:
     pws: true
     targetType: 'inline'
     script: |          
-      ./aimaps/aimaps-designer/AiMap.Console.exe src='$(Build.SourcesDirectory)/Icfes/maps/PLEXI.aiml' csv= '$(Build.SourcesDirectory)/Icfes/maps/PLEXI.csv'
+      ./aimaps/aimaps-designer/AiMap.Console.exe src='$(Build.SourcesDirectory)/Icfes/maps/PLEXI.aiml' csv='$(Build.SourcesDirectory)/Icfes/maps/PLEXI.csv'
   displayName: 'Running robot - Icfes '
   timeoutInMinutes: 60 
