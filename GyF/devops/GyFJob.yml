@@ -3,7 +3,7 @@
 steps:
 
 - powershell: |
-         $destinationFolder = "$(Build.SourcesDirectory)/GyF/aimaps/aimaps-cli/win-x64/selenium/"
+         $destinationFolder = "$(Build.SourcesDirectory)/aimaps/aimaps-cli/win-x64/selenium/"
          if (!(Test-Path -path $destinationFolder)) {New-Item $destinationFolder -Type Directory}
          Copy-Item 'C:/SeleniumWebDrivers/ChromeDriver/*' $destinationFolder -Force -Recurse
   displayName: 'Install web drivers'
@@ -13,6 +13,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: |      
-      ./GyF/aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/GyF/maps/Robot_Demo_GyF.aimj'
+      ./aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/GyF/maps/Robot_Demo_GyF.aimj'
   displayName: 'Running robot - Competidores '
   timeoutInMinutes: 10

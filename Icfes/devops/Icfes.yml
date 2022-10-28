@@ -1,0 +1,17 @@
+# The TIA - Team!
+
+trigger:
+- '*'
+
+#pool:
+#  vmImage: $(agentImage)
+pool: GreenHeartDemosAgent
+
+jobs:
+- job: LoadAgentNode1
+  displayName: CBM1
+  continueOnError: false
+  workspace:
+    clean: outputs
+  steps:
+    - template: IcfesJob.yml

@@ -3,7 +3,7 @@
 steps:
 
 - powershell: |
-      $destinationFolder = "$(Build.SourcesDirectory)/ATH/aimaps/aimaps-cli/win-x64/selenium/"
+      $destinationFolder = "$(Build.SourcesDirectory)/aimaps/aimaps-cli/win-x64/selenium/"
       if (!(Test-Path -path $destinationFolder)) {New-Item $destinationFolder -Type Directory}
       Copy-Item 'C:/SeleniumWebDrivers/ChromeDriver/*' $destinationFolder -Force -Recurse
   displayName: 'Install web drivers'
@@ -21,9 +21,9 @@ steps:
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
       $connect = "$cmd ""$vpnname"" $vpnusername $vpnpassword"
       Invoke-Expression -Command $connect
-      ./ATH/aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ATH/maps/Robot_Demo_ATH_Bogota.aimj'
+      ./aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ATH/maps/Robot_Demo_ATH_Bogota.aimj'
       $disconnect = "$cmd ""$vpnname"" /disconnect"
       Invoke-Expression -Command $disconnect
       Remove-VpnConnection -Name "greensqa@190.85.58.226" -Force     
   displayName: 'Running robot - ATH'
-  timeoutInMinutes: 20
+  timeoutInMinutes: 15

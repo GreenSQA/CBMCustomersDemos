@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AiMap.Executor.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:AiMap.Executor.Entity.MapCompile">
+            <summary>
+            Manage a map compile.
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Entity.MapCompile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AiMap.Executor.Entity.MapCompile"/> class.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.MapCompile.Name">
+            <summary>
+            Gets or sets the name of map.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.MapCompile.Similarity">
+            <summary>
+            Gets or sets the minimum threshold of similarity between two objects
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.MapCompile.Stages">
+            <summary>
+            Gets the stage list.
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Entity.MapCompile.ToJsonString">
+            <summary>
+            returns this object in a json string
+            </summary>
+            <returns>The Json string</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.MapCompile.ToJson">
+            <summary>
+            Returns a JSON that represents the current object.
+            </summary>
+            <returns>A JSON that represents the current object.</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.MapCompile.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.MapCompile.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.MapCompile.GenericHashCode(System.Object)">
+            <summary>
+            Generic hashchode calculation
+            </summary>
+            <param name="element">element to calculate to</param>
+            <returns>the hash code</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.MapCompile.GetHashCode">
+            <summary>
+            Serves as the default hash function.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="T:AiMap.Executor.Entity.StageCompile">
+            <summary>
+            Manage a Stage compile
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StageCompile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AiMap.Executor.Entity.StageCompile"/> class.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StageCompile.Name">
+            <summary>
+            Gets or sets the name of the stage.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StageCompile.StageType">
+            <summary>
+            Gets or sets the type of the stage.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StageCompile.SourceCode">
+            <summary>
+            Gets or sets the dynamic source code of the stage
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StageCompile.Steps">
+            <summary>
+            Gets the step list.
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StageCompile.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StageCompile.ToJsonString">
+            <summary>
+            Returns the JSon String which represent
+            this object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StageCompile.ToJson">
+            <summary>
+            Returns a JSON that represents the current object.
+            </summary>
+            <returns>A JSON that represents the current object.</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StageCompile.GetHashCode">
+            <summary>
+            Serves as the default hash function.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StageCompile.HashUtilGetHash">
+            <summary>
+            Deals with hash code error
+            </summary>
+            <returns>local hash code</returns>
+        </member>
+        <member name="T:AiMap.Executor.Entity.StepCompile">
+            <summary>
+            Manage step compile.
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StepCompile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AiMap.Executor.Entity.StepCompile"/> class.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.Name">
+            <summary>
+            Gets or sets the Name of the step
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.LocatorType">
+            <summary>
+            Gets or sets the locator type
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.Image">
+            <summary>
+            Gets or sets image pattern
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.Value">
+            <summary>
+            Gets or sets the Value of the step.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.ActionType">
+            <summary>
+            Gets or sets the Type of the step.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.DropOffToX">
+            <summary>
+            Gets or sets the Drop x position.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.DropOffToY">
+            <summary>
+            Gets or sets the Drop y position.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.OffsetX">
+            <summary>
+            Gets or sets the Offset in x.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.OffsetY">
+            <summary>
+            Gets or sets the Offset in y.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.DragDrop">
+            <summary>
+            Gets or sets the drag and drop position
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.ThrowsError">
+            <summary>
+            Gets or sets a value indicating whether to fail fails.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.Timeout">
+            <summary>
+            Gets or sets the Maximum time to execute the action.
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.CustomErrorMessage">
+            <summary>
+            Gets or sets the display message when an error occurs. 
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.ElementSelectorIndex">
+            <summary>
+            Gets or sets the index selenium selector. 
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.SeByLocator">
+            <summary>
+            Gets or sets the by selector. 
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Entity.StepCompile.SeLocatorString">
+            <summary>
+            Gets or sets the selector.
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StepCompile.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StepCompile.ToJsonString">
+            <summary>
+            Returns the json string of this object
+            </summary>
+            <returns>JSon string</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StepCompile.ToJson">
+            <summary>
+            Returns a JSON that represents the current object.
+            </summary>
+            <returns>A JSON that represents the current object.</returns>
+        </member>
+        <member name="M:AiMap.Executor.Entity.StepCompile.GetHashCode">
+            <summary>
+            Serves as the default hash function.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+    </members>
+</doc>

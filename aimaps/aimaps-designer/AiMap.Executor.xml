@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AiMap.Executor</name>
+    </assembly>
+    <members>
+        <member name="T:AiMap.Executor.MapExecutor">
+            <summary>
+            Responsible for executing the maps
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.MapExecutor.TurnOnSeleniumServer">
+            <summary>
+            Gets or sets a boolean indicating if the selenium server must be started
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.MapExecutor.MapVariables">
+            <summary>
+            Gets or sets the map variables
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapExecutor.Execute(System.String)">
+            <summary>
+            Execute map.
+            </summary>
+            <param name="mapFullPath">Map full path.</param>
+        </member>
+        <member name="M:AiMap.Executor.MapExecutor.Execute(System.String,System.String)">
+            <summary>
+            Execute map.
+            </summary>
+            <param name="deviceSerial">Mobile serial id</param>
+            <param name="mapFullPath">Map full path.</param>
+        </member>
+        <member name="M:AiMap.Executor.MapExecutor.ExecuteBck(System.String,System.String)">
+            <summary>
+            Execute map background.
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapExecutor.Execute(System.String,System.String,System.String)">
+            <summary>
+            Execute map.
+            </summary>
+            <param name="deviceSerial">Mobile serial id</param>
+            <param name="mapFullPath">Map full path.</param>
+            <param name="csvFile">Path of the csv file</param>
+        </member>
+        <member name="M:AiMap.Executor.MapExecutor.RunNodeJS">
+            <summary>
+            Execute NodeJS stand alone.
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapExecutor.InjectDeviceDaemon(System.String)">
+            <summary>
+            Send to device to packets control
+            </summary>
+            <param name="deviceSerialId">Device serial ID</param>
+        </member>
+        <member name="M:AiMap.Executor.MapExecutor.ExecuteWithCsv(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Execute map with range of values of CSV file.
+            </summary>
+            <param name="mapFullPath">Full path map.</param>
+            <param name="csvFullPath">CSV file full path.</param>
+            <param name="start">row start index.</param>
+            <param name="end">end start index.</param>
+            <returns>Exception list of errors in the execution.</returns>
+        </member>
+        <member name="M:AiMap.Executor.MapExecutor.ExecuteWithCsvFiltered(System.String,System.String)">
+            <summary>
+            Run with CSV filtered into MapData Options
+            </summary>
+            <param name="mapFullPath"></param>
+            <param name="csvFullPath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AiMap.Executor.MapModel">
+            <summary>
+            Hosts a map
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.MapModel.RunAttendedMode">
+            <summary>
+            Indicates if the map will ask for user assistance when an error
+            ocurrs, usually this is for csv executions
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.#ctor(System.String)">
+            <summary>
+            Constructor requieres full path
+            </summary>
+            <param name="mapFullPath">Map path</param>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.Run">
+            <summary>
+            Runs all the map
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.RunCsvLocal">
+            <summary>
+            Runs all the map with local csv
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.RunCustomCsv(System.String)">
+            <summary>
+            Runs all the map with local csv
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.Run(System.String)">
+            <summary>
+            Runs an action
+            </summary>
+            <param name="actionName">There are two possible ways:
+            1) "Stage Name>Step Name"
+            2) "Stage Name"
+            </param>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.Run(System.String,System.String)">
+            <summary>
+            Runs from given path to given path
+            </summary>
+            <param name="fromActionName">initial path</param>
+            <param name="toActionName">final path</param>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.Run(System.String,System.String,System.String,System.String)">
+            <summary>
+            Runs switch given parameters
+            </summary>
+            <param name="fromStageName">Initial stage</param>
+            <param name="fromStepName">Step must be contained on initial stage</param>
+            <param name="toStageName">final stage</param>
+            <param name="toStepName">Step must be contained on final stage</param>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.GetActionTimeout(System.String)">
+            <summary>
+            Get action timeout
+            </summary>
+            <param name="actionPath"> Stage Name>Step Name</param>
+            <returns>the action timeout</returns>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.SetParameter(System.String,System.String)">
+            <summary>
+            Sets a step value
+            </summary>
+            <param name="stepPath">stepPath</param>
+            <param name="stepValue">stepValue</param>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.GetParameter(System.String)">
+            <summary>
+            Gets a step value
+            </summary>
+            <param name="stepPath">stepPath</param>
+            <returns>the value of the step</returns>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.AbortMapModelExecution">
+            <summary>
+            Aborts map model execution and throws ExecutionEngineException
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapModel.Dispose">
+            <summary>
+            Este código se agrega para implementar correctamente el patrón disposeable
+            </summary>
+        </member>
+        <member name="T:AiMap.Executor.MapUtilities">
+            <summary>
+            Contains methods for handling maps.
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapUtilities.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.MapUtilities.File">
+            <summary>
+            File base
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.MapUtilities.CsvLength(System.String)">
+            <summary>
+            Gets the number of records in a CSV file.
+            </summary>
+            <param name="csvFullPath">CSV path.</param>
+            <returns>Number of records.</returns>
+        </member>
+        <member name="T:AiMap.Executor.Remote.AiMapsRemoteServer">
+            <summary>
+            AIMaps Rest Server (Non case sensitive)
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.#ctor">
+            <summary>
+            Class constructor
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.Ping">
+            <summary>
+            Ping to determine if service is alive
+            </summary>
+            <returns>returns pong</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.LoadMap(System.String)">
+            <summary>
+            Loads a map
+            </summary>
+            <param name="path">Map path</param>
+            <returns>okay when map was loaded</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.UnloadMap(System.String)">
+            <summary>
+            Unloads a map from the server
+            </summary>
+            <param name="path">Map path</param>
+            <returns>okay when the action was correct</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.RunStage(System.String,System.String)">
+            <summary>
+            Runs an stage
+            </summary>
+            <param name="mapName">Map Name</param>
+            <param name="stageName">name of the stage</param>
+            <returns>okay when the action was correct</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.RunStep(System.String,System.String,System.String)">
+            <summary>
+            Runs an step
+            </summary>
+            <param name="mapName">Map Name</param>
+            <param name="stageName">name of the stage</param>
+            <param name="stepName">name of the step</param>
+            <returns>okay when the action was correct</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.GetActionTimeout(System.String,System.String)">
+            <summary>
+            Gets an action timeout
+            </summary>
+            <param name="mapName">Map Name</param>
+            <param name="actionPath">Path of the action</param>
+            <returns>okay when the action was correct</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.RunAction(System.String,System.String)">
+            <summary>
+            Runs an action
+            </summary>
+            <param name="mapName">Map Name</param>
+            <param name="actionPath">Path of the action</param>
+            <returns>okay when the action was correct</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.RunFromTo(System.String,System.String,System.String)">
+            <summary>
+            Runs from given path to given path
+            </summary>
+            <param name="mapName">Map name</param>
+            <param name="fromActionName">initial path</param>
+            <param name="toActionName">final path</param>
+            <returns>okay when the action was correct</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.RunAll(System.String)">
+            <summary>
+            Runs all the map
+            </summary>
+            <param name="mapName">Map Name</param>
+            <returns>okay when the action was correct</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.RunAllCsv(System.String,System.String)">
+            <summary>
+            Runs all the map
+            </summary>
+            <param name="mapName">Map Name</param>
+            <param name="csvPath">CSV Path</param>
+            <returns>okay when the action was correct</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.GetParameterValue(System.String,System.String)">
+            <summary>
+            Gets a step value
+            </summary>
+            <param name="mapName">map name</param>
+            <param name="stepPath">stepPath</param>
+            <returns>the value of the step</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.SetParameterValue(System.String,System.String,System.String)">
+            <summary>
+            Sets a step value
+            </summary>
+            <param name="mapName">Map Name</param>
+            <param name="stepPath">stepPath</param>
+            <param name="stepValue">stepValue as base 64 string</param>
+            <returns>okay when the action was correct</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.GetLoadedMaps">
+            <summary>
+            Returns a comma separated map list
+            </summary>
+            <returns>The map list separated by ;</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsRemoteServer.AbortMapExecution(System.String)">
+            <summary>
+            Sends a terminate signal to the map to stop the current execution
+            </summary>
+            <param name="mapName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AiMap.Executor.Remote.AiMapsServerStarter">
+            <summary>
+            Start the REST service for AiMaps operations
+            </summary>
+        </member>
+        <member name="P:AiMap.Executor.Remote.AiMapsServerStarter.MapsList">
+            <summary>
+            Gets the list of loaded maps
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsServerStarter.RunAiMapsServer(System.Boolean@)">
+            <summary>
+            Runs the server
+            <paramref name="isAlreadyStarted"> Indicates if the server was already started </paramref>
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Remote.AiMapsServerStarter.IsServerIsAlreadyStarted">
+            <summary>
+            Checks if the server is running
+            </summary>
+            <returns>returns a boolean indicating if the server is running</returns>
+        </member>
+        <member name="T:AiMap.Executor.Remote.IAiMapsRemoteServer">
+            <summary>
+            Remote server contract
+            </summary>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.Ping">
+            <summary>
+            Performs ping operation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.LoadMap(System.String)">
+            <summary>
+            Loads map
+            </summary>
+            <param name="path">rest path</param>
+            <returns>operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.UnloadMap(System.String)">
+            <summary>
+            Unloads map
+            </summary>
+            <param name="path">rest path</param>
+            <returns>operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.RunAction(System.String,System.String)">
+            <summary>
+            Runs given action
+            </summary>
+            <param name="mapName">the name of the map</param>
+            <param name="actionPath">the name of the action</param>
+            <returns>operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.RunStage(System.String,System.String)">
+            <summary>
+            Runs given stage
+            </summary>
+            <param name="mapName">map name</param>
+            <param name="stageName">stage name</param>
+            <returns>operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.RunStep(System.String,System.String,System.String)">
+            <summary>
+            Runs step
+            </summary>
+            <param name="mapName">map name</param>
+            <param name="stageName">stage name</param>
+            <param name="stepName">stage name</param>
+            <returns>operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.RunFromTo(System.String,System.String,System.String)">
+            <summary>
+            Runs FROM given action name TO given action name
+            </summary>
+            <param name="mapName"></param>
+            <param name="fromActionName"></param>
+            <param name="toActionName"></param>
+            <returns>operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.RunAll(System.String)">
+            <summary>
+            Runs all map
+            </summary>
+            <param name="mapName">map name</param>
+            <returns>operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.RunAllCsv(System.String,System.String)">
+            <summary>
+            Runs all map with csv
+            </summary>
+            <param name="mapName">map name</param>
+            <param name="csvPath">map path</param>
+            <returns>operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.GetActionTimeout(System.String,System.String)">
+            <summary>
+            Gets action timeout
+            </summary>
+            <param name="mapName">map name</param>
+            <param name="actionPath">action name</param>
+            <returns>operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.GetParameterValue(System.String,System.String)">
+            <summary>
+            Gets parameter value
+            </summary>
+            <param name="mapName">map name</param>
+            <param name="stepPath">step</param>
+            <returns>the parmeter value</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.SetParameterValue(System.String,System.String,System.String)">
+            <summary>
+            Sets parameter value
+            </summary>
+            <param name="mapName">Map name</param>
+            <param name="stepPath">Step</param>
+            <param name="stepValue">The value to set</param>
+            <returns>Operation result</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.GetLoadedMaps">
+            <summary>
+            Returns a list of loaded maps
+            </summary>
+            <returns>The list of loaded maps</returns>
+        </member>
+        <member name="M:AiMap.Executor.Remote.IAiMapsRemoteServer.AbortMapExecution(System.String)">
+            <summary>
+            Aborts the map execution
+            </summary>
+            <param name="mapName">the map name</param>
+            <returns>operation result</returns>
+        </member>
+    </members>
+</doc>
