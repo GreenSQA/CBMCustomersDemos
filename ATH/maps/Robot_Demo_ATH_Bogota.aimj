@@ -293,7 +293,10 @@
           ActionType: "SeClick",
           CustomErrorMessage: "No se pudo da clic en el botón de pago",
           SeByLocator: "Id",
-          SeLocatorString: "fiveContinue"
+          SeLocatorString: "fiveContinue",
+          EvidenceTitle: "Pago",
+          EvidenceOrder: "After",
+          EvidenceDescription: "Se dió clic en el botón realizar pago"
         },
         {
           Name: "EscribirClave",
@@ -306,13 +309,10 @@
         {
           Name: "ClicConfirmar",
           ActionType: "SeClick",
+          ThrowsError: false,
           Timeout: 30,
-          CustomErrorMessage: "No se pudo dar clic en pagar",
           SeByLocator: "Id",
-          SeLocatorString: "btnConfirmTokenKey",
-          EvidenceTitle: "Pago",
-          EvidenceOrder: "After",
-          EvidenceDescription: "Se dió clic en el botón realizar pago"
+          SeLocatorString: "btnConfirmTokenKey"
         },
         {
           Name: "Cerrar",
