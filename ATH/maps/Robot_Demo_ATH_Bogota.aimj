@@ -142,7 +142,7 @@
         {
           Name: "ClicPagoSinInscripcion",
           ActionType: "SeClick",
-          Timeout: 60,
+          Timeout: 90,
           CustomErrorMessage: "No se puede dar clic en pagos sin inscripción",
           SeByLocator: "XPath",
           SeLocatorString: "//button[@class = 'btn btn-m ml-3 buttonPopOtherTx one-line size-new-service hide-print ui-button-pay btn-success register']"
