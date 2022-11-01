@@ -28,7 +28,7 @@
           Name: "ClicEscribirUsuario",
           ActionType: "SeClick",
           CustomErrorMessage: "No se puede dar clic en el campo de usuario",
-          SeByLocator: "Name",
+          SeByLocator: "Id",
           SeLocatorString: "CustLoginID"
         },
         {
@@ -36,7 +36,7 @@
           Value: "PaulaBBTA",
           ActionType: "SeClear",
           CustomErrorMessage: "No se puede escribir el usuario",
-          SeByLocator: "Name",
+          SeByLocator: "Id",
           SeLocatorString: "CustLoginID"
         },
         {
