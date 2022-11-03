@@ -79,7 +79,7 @@
         {
           Name: "EsperarSeccionUsuario",
           ActionType: "SeWaitForElement",
-          Timeout: 90,
+          Timeout: 120,
           CustomErrorMessage: "No se pudo completar el proceso de Login",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@class = 'user-section']",
