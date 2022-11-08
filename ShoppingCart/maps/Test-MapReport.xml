@@ -1,0 +1,9 @@
+<testsuites>
+  <testsuite name="Shopping_Cart_CBM">
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="20.77" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="9.225" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="2.636" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.051" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.278" />
+  </testsuite>
+</testsuites>
