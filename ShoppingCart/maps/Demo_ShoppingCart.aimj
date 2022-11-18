@@ -46,7 +46,7 @@
         },
         {
           Name: "NameProduct1",
-          Value: "SUPCASE Unicorn Beetle Mag Case for iPhone 14 Pro Max 6.7\", Compatible with MagSafe Shockproof Protective Slim Clear Case (Purple)",
+          Value: "SUPCASE Unicorn Beetle Mag Case for iPhone 14 Pro Max 6.7\", Compatible with MagSafe Shockproof Protective Slim Clear Case (Black)",
           ActionType: "SeExtractElementText",
           SeByLocator: "Id",
           SeLocatorString: "productTitle"
@@ -103,7 +103,7 @@
       Steps: [
         {
           Name: "Product1",
-          Value: "17.99",
+          Value: "35.99",
           ActionType: "None"
         },
         {
@@ -128,18 +128,17 @@
         },
         {
           Name: "ExtractProduct1",
-          Value: "$17.99",
+          Value: "$35.99",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
-          SeLocatorString: "//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']"
+          SeLocatorString: "//div[@data-name='Active Items']/div[3]//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']"
         },
         {
           Name: "ExtractProduct2",
           Value: "$23.99",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
-          SeLocatorString: "//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']",
-          ElementSelectorIndex: "1"
+          SeLocatorString: "//div[@data-name='Active Items']/div[4]//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']"
         },
         {
           Name: "ExtractValueProduct1",
