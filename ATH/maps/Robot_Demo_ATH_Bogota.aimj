@@ -82,7 +82,7 @@
         {
           Name: "EsperarSeccionUsuario",
           ActionType: "SeWaitForElement",
-          Timeout: 120,
+          Timeout: 150,
           CustomErrorMessage: "No se pudo completar el proceso de Login",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@class = 'user-section']",
@@ -230,7 +230,7 @@
         },
         {
           Name: "EscribirIdentificadorServicio",
-          Value: "3122014040",
+          Value: "654587897",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "idService"
