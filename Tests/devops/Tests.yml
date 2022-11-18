@@ -1,8 +1,5 @@
 # The TIA - Team!
 
-trigger:
-- '*'
-
 schedules:
   - cron: "0 * * * *"
     displayName: Schedule job
