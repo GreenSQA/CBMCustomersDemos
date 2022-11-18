@@ -9,5 +9,5 @@ steps:
     targetType: 'inline'
     script: |          
       "Este es un pipeline para probar la disponibilidad de los microsoft agents. Se ejecutó correctamente."
-  displayName: 'Running robot - Tests '
+  displayName: 'Running - Tests '
   timeoutInMinutes: 5 
