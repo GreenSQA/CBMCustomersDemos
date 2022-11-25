@@ -85,7 +85,7 @@
         },
         {
           Name: "WriteProduct2",
-          Value: "Wireless earbuds",
+          Value: "Wireless earbuds samsung",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "twotabsearchtextbox"
