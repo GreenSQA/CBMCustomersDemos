@@ -55,7 +55,7 @@
           Name: "ClicBuyNew",
           ActionType: "SeClick",
           ThrowsError: false,
-          Timeout: 6,
+          Timeout: 4,
           SeByLocator: "XPath",
           SeLocatorString: "//i[@class='a-icon a-accordion-radio a-icon-radio-inactive']"
         },
@@ -79,13 +79,13 @@
           Name: "Close",
           ActionType: "SeClick",
           ThrowsError: false,
-          Timeout: 6,
+          Timeout: 4,
           SeByLocator: "XPath",
           SeLocatorString: "//a[contains(@id,'close')]"
         },
         {
           Name: "WriteProduct2",
-          Value: "Wireless earbuds samsung",
+          Value: "Dual LED Wireless Earphones",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "twotabsearchtextbox"
@@ -111,7 +111,7 @@
           Name: "CloseProtection",
           ActionType: "SeClick",
           ThrowsError: false,
-          Timeout: 6,
+          Timeout: 4,
           SeByLocator: "XPath",
           SeLocatorString: "//button[@data-action='a-popover-close']"
         }
