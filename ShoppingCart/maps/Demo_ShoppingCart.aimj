@@ -14,13 +14,13 @@
       Steps: [
         {
           Name: "Product1",
-          Value: "BOBOM [4 in 1] Armor Case for iPhone 14 Case",
+          Value: "Armor Case for iPhone",
           ActionType: "None"
         },
         {
           Name: "Product2",
-          Value: "CaptureC Wireless Earbud,LED Power Display Bluetooth Headphones",
-          ActionType: "Click",
+          Value: "Wireless Earbud for iPhone",
+          ActionType: "None",
           OffsetWidth: 13,
           OffsetHeight: 13
         },
@@ -164,7 +164,7 @@
         {
           Name: "EnterCart",
           Value: "https://www.amazon.com/gp/cart/view.html?ref_=nav_cart",
-          ActionType: "SeNavigateTo",
+          ActionType: "SeClick",
           CustomErrorMessage: "Failed to enter shopping cart",
           SeByLocator: "XPath",
           SeLocatorString: "//*[@id=\"sw-gtc\"]/span/a",
