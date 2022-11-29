@@ -40,5 +40,10 @@
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="2.71" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.043" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.44" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="22.733" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="2.351" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="2.7" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.053" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.459" />
   </testsuite>
 </testsuites>

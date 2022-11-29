@@ -153,17 +153,18 @@
         },
         {
           Name: "Product2",
-          Value: "23.99",
+          Value: "9.99",
           ActionType: "None"
         },
         {
           Name: "Product1_2",
-          Value: "47.98",
+          Value: "33.98",
           ActionType: "None"
         },
         {
           Name: "EnterCart",
-          ActionType: "SeClick",
+          Value: "https://www.amazon.com/gp/cart/view.html?ref_=nav_cart",
+          ActionType: "SeNavigateTo",
           CustomErrorMessage: "Failed to enter shopping cart",
           SeByLocator: "XPath",
           SeLocatorString: "//*[@id=\"sw-gtc\"]/span/a",
@@ -180,7 +181,7 @@
         },
         {
           Name: "ExtractProduct2",
-          Value: "$23.99",
+          Value: "$9.99",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@data-name='Active Items']/div[4]//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']"
@@ -197,7 +198,7 @@
         },
         {
           Name: "ExtractAdd",
-          Value: "$47.98",
+          Value: "$33.98",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//*[@id=\"sc-subtotal-amount-buybox\"]/span"
@@ -270,12 +271,12 @@
       Steps: [
         {
           Name: "Total",
-          Value: "119.95",
+          Value: "77.95",
           ActionType: "None"
         },
         {
           Name: "ExtractValueTotals",
-          Value: "$119.95",
+          Value: "$77.95",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//*[@id=\"sc-subtotal-amount-buybox\"]/span"
