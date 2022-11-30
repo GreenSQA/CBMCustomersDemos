@@ -1,5 +1,8 @@
 # The TIA - Team!
 
+variables:
+- group: TIA_Key_Vault
+
 trigger:
 - '*'
 

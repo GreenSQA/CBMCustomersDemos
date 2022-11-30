@@ -1,9 +1,9 @@
 {
   Name: "Demo_ShoppingCart",
-  GlobalSourceCode: "readonly int USER_THINK_TIME = 1000;\r\n\r\nprivate void SetupFuncMonitor()\r\n{\r\n  InitFunc();\r\n\r\n  Func.ProjectInfo.CustomerId            = StepValStr(\"Monitor>CustomerId\");\r\n  Func.ProjectInfo.CustomerName          = StepValStr(\"Monitor>CustomerName\");\r\n  Func.ProjectInfo.ProjectId             = StepValStr(\"Monitor>ProjectId\");\r\n  Func.ProjectInfo.ProjectName           = StepValStr(\"Monitor>ProjectName\");\r\n  Func.ProjectInfo.IterationId           = StepValStr(\"Monitor>IterationId\");\r\n  Func.ProjectInfo.TestCaseId            = StepValStr(\"Monitor>TestCaseId\") + \"-\" + StringUtility.RandomString(3); \r\n  Func.ProjectInfo.ApplicationVersion    = StepValStr(\"Monitor>ApplicationVersion\");\r\n  Func.ProjectInfo.TechnologyApp         = \"Web\"; //Change this with the proper value\r\n  Func.ProjectInfo.GsqaService           = GsqaService.ATM; //TIA;ATM;Services\r\n  Func.ProjectInfo.HumanRelationRate     = StepValDouble(\"Monitor>HumanRelationRate\"); \r\n  Func.ProjectInfo.DeploymentEnvironment = DevEnvironment.QA; //DEV;QA;STG;PRD\r\n  Func.ProjectInfo.IsGreenHeartPrdMode   = StepValBool(\"Monitor>IsGreenHeartPrdMode\");\r\n  \r\n  ResetStartTime();\r\n}\r\n\r\nprivate void GetPriceSelector()\r\n{\r\n   if(Race(\"AddProducts>WaitBuyNew\", \"AddProducts>WaitAddCart\") == \"AddProducts>WaitBuyNew\")\r\n  {\r\n    Run(\"AddProducts>ClicBuyNew\");       \r\n    SetVal(\"AddProducts>PriceSelector\", \"//span[@class='a-price a-text-price a-size-medium apexPriceToPay']\");\r\n  }\r\n  else\r\n  {\r\n    //SetVal(\"AddProducts>PriceSelector\", \"//span[@class='a-price a-text-price a-size-medium']\");\r\n    SetVal(\"AddProducts>PriceSelector\", \"//span[@class='a-price aok-align-center']\");\r\n  }\r\n}\r\n\r\nprivate void ValidationPrices()\r\n{\r\n  float product1           = float.Parse(StepVal(\"ShoppingCart>Product1\"), System.Globalization.CultureInfo.InvariantCulture.NumberFormat);\r\n  float product2           = float.Parse(StepVal(\"ShoppingCart>Product2\"), System.Globalization.CultureInfo.InvariantCulture.NumberFormat);\r\n  float product1_2         = float.Parse(StepVal(\"ShoppingCart>Product1_2\"), System.Globalization.CultureInfo.InvariantCulture.NumberFormat);\r\n  float total              = float.Parse(StepVal(\"ValidateTotals>Total\"), System.Globalization.CultureInfo.InvariantCulture.NumberFormat);\r\n  float roundSumValidation = (float)Math.Round(((product1 * 2) + (product2 * 3)),2);\r\n \r\n  LogTextToGH(\"Product value 1\", \"The price of product 1 shown in the search page was: $\" + product1.ToString());\r\n  LogTextToGH(\"Product value 2\", \"The price of product 2 shown in the search page was: $\" + product2.ToString()); \r\n  LogTextToGH(\"Total of both values\", \"The total of both products as shown in the search page was: $\" + product1_2.ToString());\r\n  LogTextToGH(\"Total after increasing number of products\", \"The total value shown after increasing the product quantities is now: $\" + total.ToString());\r\n  \r\n  if(product1_2<total)\r\n  {\r\n    LogTextToGH(\"Comparison of total fields\", \" Good!. After increasing the product quantities, we verified that the new total is greater than the initial total shown\");\r\n  }\r\n  else\r\n  {\r\n    throw new Exception (\"Error: The total value after increasing the quantities of the products is not greater than the initial total value\");\r\n  }\r\n        \r\n  if(roundSumValidation == total)\r\n  {\r\n    LogPictureToGH(\"Total comparison after increasing the products\", \"The total value after increasing the quantity of product 1 to 2 and product 2 to 3 coincides with the total value displayed\");\r\n  }\r\n  else\r\n  { \r\n    throw new Exception (\"Error: The total value after increasing the amount of product 1 to 2 and product 2 to 3 does not match the total value displayed\");\r\n  }\r\n}",
+  GlobalSourceCode: "readonly int USER_THINK_TIME = 1000;\r\n\r\nprivate void SetupFuncMonitor()\r\n{\r\n  InitFunc();\r\n\r\n  Func.ProjectInfo.CustomerId            = StepValStr(\"Monitor>CustomerId\");\r\n  Func.ProjectInfo.CustomerName          = StepValStr(\"Monitor>CustomerName\");\r\n  Func.ProjectInfo.ProjectId             = StepValStr(\"Monitor>ProjectId\");\r\n  Func.ProjectInfo.ProjectName           = StepValStr(\"Monitor>ProjectName\");\r\n  Func.ProjectInfo.IterationId           = StepValStr(\"Monitor>IterationId\");\r\n  Func.ProjectInfo.TestCaseId            = StepValStr(\"Monitor>TestCaseId\") + \"-\" + StringUtility.RandomString(3); \r\n  Func.ProjectInfo.ApplicationVersion    = StepValStr(\"Monitor>ApplicationVersion\");\r\n  Func.ProjectInfo.TechnologyApp         = \"Web\"; //Change this with the proper value\r\n  Func.ProjectInfo.GsqaService           = GsqaService.ATM; //TIA;ATM;Services\r\n  Func.ProjectInfo.HumanRelationRate     = StepValDouble(\"Monitor>HumanRelationRate\"); \r\n  Func.ProjectInfo.DeploymentEnvironment = DevEnvironment.QA; //DEV;QA;STG;PRD\r\n  Func.ProjectInfo.IsGreenHeartPrdMode   = StepValBool(\"Monitor>IsGreenHeartPrdMode\");\r\n  \r\n  ResetStartTime();\r\n}\r\n\r\nprivate void GetPriceSelector()\r\n{\r\n   if(Race(\"AddProducts>WaitBuyNew\", \"AddProducts>WaitAddCart\") == \"AddProducts>WaitBuyNew\")\r\n  {\r\n    Run(\"AddProducts>ClicBuyNew\");       \r\n    SetVal(\"AddProducts>PriceSelector\", \"//span[@class='a-price a-text-price a-size-medium apexPriceToPay']\");\r\n  }\r\n  else\r\n  {\r\n    //SetVal(\"AddProducts>PriceSelector\", \"//span[@class='a-price a-text-price a-size-medium']\");\r\n    SetVal(\"AddProducts>PriceSelector\", \"//span[@class='a-price aok-align-center']\");\r\n  }\r\n}\r\n\r\nprivate void ValidationPrices()\r\n{\r\n  float product1           = float.Parse(StepVal(\"ShoppingCart>Product1\"), System.Globalization.CultureInfo.InvariantCulture.NumberFormat);\r\n  float product2           = float.Parse(StepVal(\"ShoppingCart>Product2\"), System.Globalization.CultureInfo.InvariantCulture.NumberFormat);\r\n  float product1_2         = float.Parse(StepVal(\"ShoppingCart>Product1_2\"), System.Globalization.CultureInfo.InvariantCulture.NumberFormat);\r\n  float total              = float.Parse(StepVal(\"ValidateTotals>Total\"), System.Globalization.CultureInfo.InvariantCulture.NumberFormat);\r\n  float roundSumValidation = (float)Math.Round(((product1 * 2) + (product2 * 3)),2);\r\n \r\n  LogTextToGH(\"Product value 1\", \"The price of product 1 shown in the search page was: $\" + product1.ToString());\r\n  LogTextToGH(\"Product value 2\", \"The price of product 2 shown in the search page was: $\" + product2.ToString()); \r\n  LogTextToGH(\"Total of both values\", \"The total of both products as shown in the search page was: $\" + product1_2.ToString());\r\n  LogTextToGH(\"Total after increasing number of products\", \"The total value shown after increasing the product quantities is now: $\" + total.ToString());\r\n  \r\n  if(product1_2<total)\r\n  {\r\n    LogTextToGH(\"Comparison of total fields\", \" Good!. After increasing the product quantities, we verified that the new total is greater than the initial total shown\");\r\n  }\r\n  else\r\n  {\r\n    throw new Exception (\"Error: The total value after increasing the quantities of the products is not greater than the initial total value\");\r\n  }\r\n        \r\n  if(roundSumValidation == total)\r\n  {\r\n    //Run(\"ValidateTotals>EvidencePriceValidation\");\r\n    LogPictureToGH(\"Total comparison after increasing the products\", \"The total value after increasing the quantity of product 1 to 2 and product 2 to 3 coincides with the total value displayed\");\r\n  }\r\n  else\r\n  { \r\n    throw new Exception (\"Error: The total value after increasing the amount of product 1 to 2 and product 2 to 3 does not match the total value displayed\");\r\n  }\r\n}",
   RobotAuthor: "cdoncel-cgordillo",
   SeleniumBrowser: "Chrome (Headless)",
-  SeleniumScreenHeight: 1500,
+  SeleniumScreenHeight: 1024,
   SeleniumScreenWidth: 1280,
   Stages: [
     {
@@ -20,13 +20,11 @@
         {
           Name: "Product2",
           Value: "Wireless Earbud for iPhone",
-          ActionType: "None",
-          OffsetWidth: 13,
-          OffsetHeight: 13
+          ActionType: "None"
         },
         {
           Name: "PriceProduct",
-          Value: "23.99\r\n",
+          Value: "29.99\r\n",
           ActionType: "None"
         },
         {
@@ -49,7 +47,7 @@
         },
         {
           Name: "WriteProduct",
-          Value: "CaptureC Wireless Earbud,LED Power Display Bluetooth Headphones",
+          Value: "Wireless Earbud for iPhone",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "twotabsearchtextbox"
@@ -68,7 +66,7 @@
         },
         {
           Name: "ExtractNameProduct",
-          Value: "VEECOH True Wireless Earbuds Bluetooth Headphones Stereo Earphones,25H Playtime LED Power Display Touch Control with Microphone in-Ear IPX5 Waterproof Headset for Airpods iPhone Samsung iOS Android",
+          Value: "iWALK Amour Wireless Earbuds for Small Ears Women, 3g Light Weight Bluetooth Earbuds 5.2 HiFi Sterero with Noise Cancelling Microphone, Bluetooth Earphones for Sports and Working",
           ActionType: "SeExtractElementText",
           SeByLocator: "Id",
           SeLocatorString: "productTitle"
@@ -97,7 +95,7 @@
         },
         {
           Name: "ExtractPrice",
-          Value: "$23.99\r\n$23\r\n.\r\n99",
+          Value: "$29.99\r\n$29\r\n.\r\n99",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "[AddProducts.PriceSelector]"
@@ -148,17 +146,17 @@
       Steps: [
         {
           Name: "Product1",
-          Value: "23.99",
+          Value: "29.99",
           ActionType: "None"
         },
         {
           Name: "Product2",
-          Value: "9.99",
+          Value: "18.99",
           ActionType: "None"
         },
         {
           Name: "Product1_2",
-          Value: "33.98",
+          Value: "48.98",
           ActionType: "None"
         },
         {
@@ -174,14 +172,14 @@
         },
         {
           Name: "ExtractProduct1",
-          Value: "$23.99",
+          Value: "$29.99",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@data-name='Active Items']/div[3]//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']"
         },
         {
           Name: "ExtractProduct2",
-          Value: "$9.99",
+          Value: "$18.99",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@data-name='Active Items']/div[4]//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']"
@@ -198,7 +196,7 @@
         },
         {
           Name: "ExtractAdd",
-          Value: "$33.98",
+          Value: "$48.98",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//*[@id=\"sc-subtotal-amount-buybox\"]/span"
@@ -231,7 +229,7 @@
           ElementSelectorIndex: "Last with value equal to:2",
           EvidenceTitle: "Increase Product 1",
           EvidenceOrder: "After",
-          EvidenceDescription: " The product quantity for [AddProducts.NameProduct] has been increased to 2"
+          EvidenceDescription: " The product quantity for the first product has been increased to 2"
         },
         {
           Name: "UserThinkTime1",
@@ -253,13 +251,13 @@
         {
           Name: "IncreaseThree",
           ActionType: "SeClick",
-          CustomErrorMessage: "Could not increase the quantity of the first selected product",
+          CustomErrorMessage: "Could not increase the quantity of the second selected product",
           SeByLocator: "XPath",
           SeLocatorString: "//*[@role='listbox']/li",
           ElementSelectorIndex: "Last with value equal to:3",
           EvidenceTitle: "Increase Product 2",
           EvidenceOrder: "After",
-          EvidenceDescription: " The product quantity for [AddProducts.NameProduct2] has been increased to 3"
+          EvidenceDescription: " The product quantity for the second product has been increased to 3"
         }
       ]
     },
@@ -271,12 +269,12 @@
       Steps: [
         {
           Name: "Total",
-          Value: "77.95",
+          Value: "116.95",
           ActionType: "None"
         },
         {
           Name: "ExtractValueTotals",
-          Value: "$77.95",
+          Value: "$116.95",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//*[@id=\"sc-subtotal-amount-buybox\"]/span"
@@ -285,6 +283,13 @@
           Name: "ExtractValueTotal",
           Value: "[ValidateTotals.Total]=GetPart([ValidateTotals.ExtractValueTotals], '$', 1)",
           ActionType: "ComputeCalculusExpression"
+        },
+        {
+          Name: "EvidencePriceValidation",
+          ActionType: "None",
+          EvidenceTitle: "Total comparison after increasing the products",
+          EvidenceOrder: "After",
+          EvidenceDescription: "The total value after increasing the quantity of product 1 to 2 and product 2 to 3 coincides with the total value displayed"
         }
       ]
     },
@@ -302,7 +307,7 @@
           SeLocatorString: "//input[@data-action='delete']",
           EvidenceTitle: "Clear Product 1",
           EvidenceOrder: "After",
-          EvidenceDescription: "The product [AddProducts.NameProduct] has been removed from the shopping cart"
+          EvidenceDescription: "The first product has been removed from the shopping cart"
         },
         {
           Name: "DeleteProduct2",
@@ -312,7 +317,7 @@
           SeLocatorString: "//input[@data-action='delete']",
           EvidenceTitle: "Clear Product 2",
           EvidenceOrder: "After",
-          EvidenceDescription: "The product [AddProducts.NameProduct2] has been removed from the shopping cart"
+          EvidenceDescription: "The second product has been removed from the shopping cart"
         }
       ]
     },
