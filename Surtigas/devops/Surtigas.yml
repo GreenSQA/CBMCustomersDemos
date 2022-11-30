@@ -1,0 +1,25 @@
+# The TIA - Team!
+
+trigger:
+- '*'
+
+schedules:
+  - cron: "30 5,8,11,14,17,20,23 * * 1-5"
+    displayName: Schedule job
+    branches:
+      include:
+      - main
+    always: true
+
+pool:
+  vmImage: $(agentImage)
+#pool: GreenHeartDemosAgent
+
+jobs:
+- job: LoadAgentNode1
+  displayName: CBM1
+  continueOnError: false
+  workspace:
+    clean: outputs
+  steps:
+    - template: SurtigasJob.yml
