@@ -95,8 +95,9 @@
         },
         {
           Name: "ExtractPrice",
-          Value: "$29.99\r\n$29\r\n.\r\n99",
+          Value: "$29.99$29.99",
           ActionType: "SeExtractElementText",
+          CustomErrorMessage: "Could not get the price for selected product",
           SeByLocator: "XPath",
           SeLocatorString: "[AddProducts.PriceSelector]"
         },
