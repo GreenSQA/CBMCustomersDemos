@@ -26,4 +26,4 @@ steps:
       Invoke-Expression -Command $disconnect
       Remove-VpnConnection -Name "greensqa@190.85.58.226" -Force        
   displayName: 'Running robot - ShoppingCart '
-  timeoutInMinutes: 5 
+  timeoutInMinutes: 15 

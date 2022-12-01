@@ -433,10 +433,11 @@ namespace GreenSQA.AiMaps.CustomLogic
     {
       //Run tests with retry
       for (int numRetry = 0; numRetry <= maxRetry; numRetry++)
-        {
+      {
         try
         {
-          if (maxRetry > 0) {
+          if (maxRetry > 0)
+          {
             Func.PausePublisher();
           }
 
@@ -444,7 +445,8 @@ namespace GreenSQA.AiMaps.CustomLogic
           {
             RunTest(trd.TestLogic, trd.BeforeTestLogic, trd.AfterTestLogic);
 
-            if (areDependant && TestRunFailed) {
+            if (areDependant && TestRunFailed)
+            {
               throw new Exception("break tests because of failure in their interdependence");
             }
 
@@ -455,7 +457,8 @@ namespace GreenSQA.AiMaps.CustomLogic
         }
         catch
         {
-          if (maxRetry > 0 && numRetry < maxRetry) {
+          if (maxRetry > 0 && numRetry < maxRetry)
+          {
             CheckClearPublisher(numRetry, maxRetry);
           }
         }
@@ -468,14 +471,16 @@ namespace GreenSQA.AiMaps.CustomLogic
 
     private void CheckClearPublisher(int numRetry, int maxRetry)
     {
-      if (numRetry < maxRetry){
+      if (numRetry < maxRetry)
+      {
         Func.ClearPublisher();
       }
     }
 
     private void CheckRetryTest(int numRetry, int maxRetry)
     {
-      if (maxRetry > 0 && numRetry < maxRetry) {
+      if (maxRetry > 0 && numRetry < maxRetry)
+      {
         if (TestRunFailed)
         {
           Console.WriteLine("[WARNING] Test failed in try num " + numRetry);
@@ -500,9 +505,16 @@ namespace GreenSQA.AiMaps.CustomLogic
       return result;
     }
 
-    public void LogPictureToGH(string tittle, string description)
+    public void LogPictureToGH(string tittle, string description, bool scrrenshootFromDriver = true)
     {
-      EvidencesManager.TakeEvidence(null, tittle, description, GetEvidencePath(), true);
+      if (scrrenshootFromDriver)
+      {
+        EvidencesManager.TakeEvidence(this.driver, tittle, description, GetEvidencePath(), true);
+      }
+      else
+      {
+        EvidencesManager.TakeEvidence(null, tittle, description, GetEvidencePath(), true);
+      }
     }
 
     public void LogTextToGH(string tittle, string description)
@@ -516,7 +528,7 @@ namespace GreenSQA.AiMaps.CustomLogic
       bool isOkay = false;
 
       for (int i = 0; i <= 3; i++)
-        {
+      {
         try
         {
           driver.Manage().Timeouts().PageLoad = TimeSpan.FromMilliseconds(millisecondstimeout);
@@ -538,7 +550,7 @@ namespace GreenSQA.AiMaps.CustomLogic
       Exception lastEx = null;
 
       for (int i = 0; i <= numRetry; i++)
-        {
+      {
         isAllOkay = true;
 
         foreach (string actionName in actionsList)
@@ -569,7 +581,7 @@ namespace GreenSQA.AiMaps.CustomLogic
 
     public void RunAsyncVoid(string stepPath)
     {
-      System.Threading.Tasks.Task.Run(()=>TryRun(stepPath));
+      System.Threading.Tasks.Task.Run(() => TryRun(stepPath));
     }
 
     public bool TryRun(string stepPath)

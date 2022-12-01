@@ -16,4 +16,4 @@ steps:
     script: |         
       ./aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/Surtigas/maps/CBMDemoSurtigas.aiml'        
   displayName: 'Running robot - ShoppingCart '
-  timeoutInMinutes: 5 
+  timeoutInMinutes: 15 
