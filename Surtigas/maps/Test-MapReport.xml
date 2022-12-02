@@ -65,5 +65,9 @@
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="Chatbot" time="4.563" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="Menu" time="1.742" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="TuFactura" time="5.051" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="ValidarDisponibilidad" time="4.811" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="Chatbot" time="4.997" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="Menu" time="1.881" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="TuFactura" time="5.72" />
   </testsuite>
 </testsuites>
