@@ -19,12 +19,12 @@
         },
         {
           Name: "Product2",
-          Value: "Wireless Earbud",
+          Value: "Wireless Earphones",
           ActionType: "None"
         },
         {
           Name: "PriceProduct",
-          Value: "24.99\r\n",
+          Value: "39.99\r\n",
           ActionType: "None"
         },
         {
@@ -48,7 +48,7 @@
         },
         {
           Name: "WriteProduct",
-          Value: "Wireless Earbud",
+          Value: "Wireless Earphones",
           ActionType: "SeClear",
           SeByLocator: "Id",
           SeLocatorString: "twotabsearchtextbox"
@@ -62,14 +62,15 @@
         {
           Name: "ClicProducts",
           ActionType: "SeClick",
+          ThrowsError: false,
           CustomErrorMessage: "could not click on the product",
           SeByLocator: "XPath",
           SeLocatorString: "//a[@class='a-link-normal s-no-outline']",
-          ElementSelectorIndex: "1"
+          ElementSelectorIndex: "3"
         },
         {
           Name: "ExtractNameProduct",
-          Value: "TOZO T6 True Wireless Earbuds Bluetooth 5.3 Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black",
+          Value: "GOLREX Bluetooth Headphones Wireless Earbuds 36Hrs Playtime Wireless Charging Case Digital LED Display Over-Ear Earphones with Earhook Waterproof Headset with Mic for Sport Running Workout Black",
           ActionType: "SeExtractElementText",
           SeByLocator: "Id",
           SeLocatorString: "productTitle"
@@ -98,7 +99,7 @@
         },
         {
           Name: "ExtractPrice",
-          Value: "$24.99\r\n$24\r\n.\r\n99",
+          Value: "$39.99\r\n$39\r\n.\r\n99",
           ActionType: "SeExtractElementText",
           CustomErrorMessage: "Could not get the price for selected product",
           SeByLocator: "XPath",
@@ -150,17 +151,17 @@
       Steps: [
         {
           Name: "Product1",
-          Value: "24.99",
+          Value: "39.99",
           ActionType: "None"
         },
         {
           Name: "Product2",
-          Value: "23.99",
+          Value: "17.99",
           ActionType: "None"
         },
         {
           Name: "Product1_2",
-          Value: "48.98",
+          Value: "57.98",
           ActionType: "None"
         },
         {
@@ -176,14 +177,14 @@
         },
         {
           Name: "ExtractProduct1",
-          Value: "$24.99",
+          Value: "$39.99",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@data-name='Active Items']/div[3]//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']"
         },
         {
           Name: "ExtractProduct2",
-          Value: "$23.99",
+          Value: "$17.99",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//div[@data-name='Active Items']/div[4]//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']"
@@ -200,7 +201,7 @@
         },
         {
           Name: "ExtractAdd",
-          Value: "$48.98",
+          Value: "$57.98",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//*[@id=\"sc-subtotal-amount-buybox\"]/span"
@@ -273,12 +274,12 @@
       Steps: [
         {
           Name: "Total",
-          Value: "121.95",
+          Value: "133.95",
           ActionType: "None"
         },
         {
           Name: "ExtractValueTotals",
-          Value: "$121.95",
+          Value: "$133.95",
           ActionType: "SeExtractElementText",
           SeByLocator: "XPath",
           SeLocatorString: "//*[@id=\"sc-subtotal-amount-buybox\"]/span"
