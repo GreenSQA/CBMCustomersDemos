@@ -1,9 +1,0 @@
-<testsuites>
-  <testsuite name="ICBS">
-    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_Login" time="16.854" />
-    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ConsultarEmpresa" time="23.756" />
-    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_ValidarInformacionPago" time="2.887" />
-    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_RealizarPago" time="1.546" />
-    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_Logout" time="3.291" />
-  </testsuite>
-</testsuites>

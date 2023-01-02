@@ -165,7 +165,7 @@
           Timeout: 60,
           CustomErrorMessage: "No se puede dar clic en tipo de empresa",
           SeByLocator: "XPath",
-          SeLocatorString: "//div[@class = 'multiselect clearfix multiSelectAvv category-w']"
+          SeLocatorString: "//div[contains(@class, 'multiSelectAvv category-w')]"
         },
         {
           Name: "ClicTipoServiciosPublicos",
