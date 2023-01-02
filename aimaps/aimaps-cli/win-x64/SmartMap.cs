@@ -242,14 +242,23 @@ namespace GreenSQA.AiMaps.CustomLogic
       }
     }
 
-    private MetricsInfoAttribute SetupTestAttributes(Action myTestLogic)
+    private MetricsInfoAttribute SetupTestAttributes(Action myTestLogic, string trait = "")
     {
       MetricsInfoAttribute myMetricInfo = null;
       var atts = myTestLogic.Method.GetCustomAttributes(typeof(MetricsInfoAttribute), true);
       if (atts.Length > 0)
       {
-        myMetricInfo = atts.GetValue(0) as MetricsInfoAttribute;
         ProjectInfo.SendLog = true;
+
+        foreach (MetricsInfoAttribute mAtt in atts)
+        {
+          myMetricInfo = mAtt;
+
+          if (!string.IsNullOrEmpty(trait) && mAtt.Trait.Equals(trait))
+          {
+            break;
+          }
+        }
       }
 
       else
@@ -270,9 +279,9 @@ namespace GreenSQA.AiMaps.CustomLogic
       return TestRunDefinition.GetTRD(testLogic, beforeTestLogic, afterTestLogic);
     }
 
-    public void RunTest(Action myTestLogic, Action beforeTestLogic = null, Action afterTestLogic = null, long AdditionalMilliseconds = 0)
+    public void RunTest(Action myTestLogic, Action beforeTestLogic = null, Action afterTestLogic = null, long AdditionalMilliseconds = 0, string trait = "")
     {
-      MetricsInfoAttribute myMetricInfo = SetupTestAttributes(myTestLogic);
+      MetricsInfoAttribute myMetricInfo = SetupTestAttributes(myTestLogic, trait);
       long elapsedMilliseconds = 0;
 
       if (myMetricInfo.SkipWhenPreviousTestFailed && this.TestRunFailed)
@@ -331,12 +340,20 @@ namespace GreenSQA.AiMaps.CustomLogic
             EvidencesManager.TakeEvidence(thisModel.SeDriver, "Error", formatedError, GetEvidencePath(), myMetricInfo.TakeScreenshotOnError);
           }
 
-          TFunc(myMetricInfo.ExcellentTime, myMetricInfo.ToleratingTime, elapsedMilliseconds, false, true);
+          if (!EvidencesManager.IsScreenshotFailed)
+          {
+            TFunc(myMetricInfo.ExcellentTime, myMetricInfo.ToleratingTime, elapsedMilliseconds, false, true);
+          }
+          else
+          {
+            Console.WriteLine("[WARNING] Test aborted because taking evidence of the error failed");
+            EvidencesManager.Reset(true);
+          }
         }
       }
       finally
       {
-        if (this.TestRunFailed)
+        if (this.TestRunFailed && !EvidencesManager.IsScreenshotFailed)
         {
           RunAfterTest(afterTestLogic, myMetricInfo.TakeScreenshotOnError);
         }
