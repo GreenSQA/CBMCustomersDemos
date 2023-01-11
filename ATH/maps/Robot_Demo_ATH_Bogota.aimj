@@ -58,7 +58,7 @@
         },
         {
           Name: "EscribirClave",
-          Value: "Greensqa24",
+          Value: "Greensqa25",
           ActionType: "SeClear",
           CustomErrorMessage: "No se puede escribir la clave",
           SeByLocator: "Id",
