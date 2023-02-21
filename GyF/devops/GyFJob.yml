@@ -13,6 +13,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: |      
-      ./aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/GyF/maps/Robot_Demo_GyF.aimj'
+      ./aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/GyF/maps/Robot_Demo_GyF.aiml'
   displayName: 'Running robot - Competidores '
   timeoutInMinutes: 10

@@ -21,7 +21,7 @@ steps:
       $cmd = $env:WINDIR + "\System32\rasdial.exe"
       $connect = "$cmd ""$vpnname"" $vpnusername $vpnpassword"
       Invoke-Expression -Command $connect    
-      ./aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ShoppingCart/maps/Demo_ShoppingCart.aimj'
+      ./aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ShoppingCart/maps/Demo_ShoppingCart.aiml'
       $disconnect = "$cmd ""$vpnname"" /disconnect"
       Invoke-Expression -Command $disconnect
       Remove-VpnConnection -Name "greensqa@190.85.58.226" -Force        
