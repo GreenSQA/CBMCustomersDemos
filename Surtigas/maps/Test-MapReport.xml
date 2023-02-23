@@ -1,0 +1,8 @@
+<testsuites>
+  <testsuite name="">
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="A_ValidarDisponibilidad" time="7.656" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="B_Chatbot" time="4.971" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="C_Menu" time="1.667" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="D_TuFactura" time="7.388" />
+  </testsuite>
+</testsuites>
