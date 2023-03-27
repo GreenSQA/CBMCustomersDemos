@@ -10,5 +10,53 @@
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="2.67" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.07" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.378" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="58.077">
+      <failure message="Error (AddProducts).(ExtractNameProduct).SeExtractElementText() -- Action not executed for the element By.Id: productTitle - The page seems to be hang up while searching elements in 12000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="33.911" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="12.065">
+      <failure message="Failed to enter shopping cart" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="52.734" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="12.035">
+      <failure message="Failed to enter shopping cart" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="134.61">
+      <failure message="A_BeforeAddProducts: Error (AddProducts).(WaitPage).SeWaitForElement() -- Action not executed for the element By.Id: nav-cart - The page seems to be hang up while searching elements in 30000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="39.122" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="12.054">
+      <failure message="Failed to enter shopping cart" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="84.162" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="12.065">
+      <failure message="Failed to enter shopping cart" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="52.6" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="12.061">
+      <failure message="Failed to enter shopping cart" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="47.28" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="12.052">
+      <failure message="Failed to enter shopping cart" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="29.916" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="12.043">
+      <failure message="Failed to enter shopping cart" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="29.469" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="2.935" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="3.188" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.07" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.511" />
   </testsuite>
 </testsuites>
