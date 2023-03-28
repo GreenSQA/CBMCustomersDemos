@@ -58,5 +58,55 @@
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="3.188" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.07" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.511" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="32.093" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="5.534" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="3.356" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.095" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.739" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="35.961" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="2.889" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="3.102" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.092" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.552" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="147.174">
+      <failure message="A_BeforeAddProducts: Error (AddProducts).(WaitPage).SeWaitForElement() -- Action not executed for the element By.Id: nav-cart - El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.Nombre del parámetro: index " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="24.799" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="2.311" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="2.729" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.035" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.355" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="31.09">
+      <failure message="Failed to add product" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="30.74">
+      <failure message="Failed to add product" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="139.988">
+      <failure message="A_BeforeAddProducts: Error (AddProducts).(WaitPage).SeWaitForElement() -- Action not executed for the element By.Id: nav-cart - The page seems to be hang up while searching elements in 35000 milliseconds " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="138.085">
+      <failure message="Failed to add product" type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="50.376" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="3.266" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="2.917" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.07" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.499" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="33.061" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="3.118" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="2.95" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.08" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.349" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="A_AddProducts" time="22.872" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="B_ShoppingCart" time="2.338" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="C_IncreaseProducts" time="2.676" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="D_ValidateTotals" time="1.053" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="E_ClearProducts" time="0.452" />
   </testsuite>
 </testsuites>
