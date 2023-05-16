@@ -1,8 +1,5 @@
 # The TIA - Team!
 
-variables:
-- group: TIA_Key_Vault
-
 trigger:
 - '*'
 
@@ -15,8 +12,8 @@ schedules:
     always: true
 
 pool:
-  vmImage: $(agentImage)
-#pool: GreenHeartDemosAgent
+#vmImage: $(agentImage)
+pool: GreenHeartDemosAgent
 
 jobs:
 - job: LoadAgentNode1
