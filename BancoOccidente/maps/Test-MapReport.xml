@@ -124,5 +124,20 @@
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="A_VerificarDisponibilidadPortal" time="5.614" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="B_HacerPago" time="28.201" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="C_PortalDePagos" time="6.661" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="A_VerificarDisponibilidadPortal" time="16.855" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="B_HacerPago" time="19.524">
+      <failure message="Error (B_HacerPago).(DesplazarceAbajo).SeScrollDown() -- Unexpected error. System.Net.WebException: No es posible conectar con el servidor remoto ---&gt; System.Net.Sockets.SocketException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:59817   en System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)   en System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Exception&amp; exception)   --- Fin del seguimiento de la pila de la excepción interna ---   en System.Net.HttpWebRequest.GetRequestStream(TransportContext&amp; context)   en System.Net.HttpWebRequest.GetRequestStream()   en OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)   en OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)   en OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute)   en OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters) " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="A_VerificarDisponibilidadPortal" time="18.842" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="B_HacerPago" time="12.262">
+      <failure message="Error (B_HacerPago).(ClicHazPago).SeClick() -- Action not executed for the element By.LinkText: Haz tus pagos - element click intercepted: Element &lt;a class=&quot;u-link&quot; href=&quot;/wps/portal/banco-de-occidente/bancodeoccidente/canales-servicios/encuentranos/haz-tus-pagos&quot; title=&quot;Haz tus pagos&quot; target=&quot;&quot; onclick=&quot;dataLayer.push({'event': 'eventOcc','eventCategory': 'Header','eventAction': 'ClicHeader','eventLabel': 'BtnHeaderHazTusPagos'});&quot;&gt;...&lt;/a&gt; is not clickable at point (880, 22). Other element would receive the click: &lt;div class=&quot;modal&quot; data-popup=&quot;popup-028&quot; id=&quot;circular028&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;  (Session info: chrome=113.0.5672.126) " type="ERROR">
+      </failure>
+    </testcase>
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="A_VerificarDisponibilidadPortal" time="6.928" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+GreenHeart" name="B_HacerPago" time="69.25">
+      <failure message="Error (B_HacerPago).(DesplazarArriba).SeScrollUp() -- The HTTP request to the remote WebDriver server for URL http://localhost:60980/session/79f626dfc703751248c0ec32b6c372c3/execute/sync timed out after 60 seconds. " type="ERROR">
+      </failure>
+    </testcase>
   </testsuite>
 </testsuites>
