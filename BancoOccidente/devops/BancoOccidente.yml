@@ -11,7 +11,7 @@ schedules:
       - main
     always: true
 
-pool:
+#pool:
 #vmImage: $(agentImage)
 pool: GreenHeartDemosAgent
 
