@@ -12,7 +12,7 @@ schedules:
     always: true
 
 pool:
-vmImage: $(agentImage)
+  vmImage: $(agentImage)
 #pool: GreenHeartDemosAgent
 
 jobs:
