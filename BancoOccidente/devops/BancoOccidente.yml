@@ -1,0 +1,28 @@
+# The TIA - Team!
+
+variables:
+- group: TIA_Key_Vault
+
+trigger:
+- '*'
+
+schedules:
+  - cron: "0 * * * 1-5"
+    displayName: Schedule job
+    branches:
+      include:
+      - main
+    always: true
+
+pool:
+  vmImage: $(agentImage)
+#pool: GreenHeartDemosAgent
+
+jobs:
+- job: LoadAgentNode1
+  displayName: CBM1
+  continueOnError: false
+  workspace:
+    clean: outputs
+  steps:
+    - template: BancoOccidenteJob.yml
