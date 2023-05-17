@@ -14,16 +14,16 @@ steps:
     pws: true
     targetType: 'inline'
     script: |
-      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -L2tpPsk '$(vpn-l2tpsk)' -Force -PassThru    
-      $vpnname = "greensqa@190.85.58.226"
-      $vpnusername = '$(vpn-user-name)'
-      $vpnpassword = '$(vpn-password)'
-      $cmd = $env:WINDIR + "\System32\rasdial.exe"
-      $connect = "$cmd ""$vpnname"" $vpnusername $vpnpassword"
-      Invoke-Expression -Command $connect    
+#      Add-VpnConnection -Name "greensqa@190.85.58.226" -ServerAddress "190.85.58.226" -TunnelType "L2tp" -L2tpPsk '$(vpn-l2tpsk)' -Force -PassThru    
+#      $vpnname = "greensqa@190.85.58.226"
+#      $vpnusername = '$(vpn-user-name)'
+#      $vpnpassword = '$(vpn-password)'
+#      $cmd = $env:WINDIR + "\System32\rasdial.exe"
+#      $connect = "$cmd ""$vpnname"" $vpnusername $vpnpassword"
+#      Invoke-Expression -Command $connect    
       ./aimaps/aimaps-cli/win-x64/Gsqa.Tools.AiMaps.Console.exe src='$(Build.SourcesDirectory)/ShoppingCart/maps/Demo_ShoppingCart.aiml'
-      $disconnect = "$cmd ""$vpnname"" /disconnect"
-      Invoke-Expression -Command $disconnect
-      Remove-VpnConnection -Name "greensqa@190.85.58.226" -Force        
+#      $disconnect = "$cmd ""$vpnname"" /disconnect"
+#      Invoke-Expression -Command $disconnect
+#      Remove-VpnConnection -Name "greensqa@190.85.58.226" -Force        
   displayName: 'Running robot - ShoppingCart '
   timeoutInMinutes: 15 
