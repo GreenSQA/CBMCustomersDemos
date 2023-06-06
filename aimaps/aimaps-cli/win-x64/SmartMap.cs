@@ -80,6 +80,8 @@ namespace GreenSQA.AiMaps.CustomLogic
 
     public long RaceElapsedMilliseconds { get; set; }
 
+    public bool AbortFailedTestWithScreenshotError { get; set; }
+
     public string TestLogsDir
     {
       set { thisModel.ExecutionContext.TestLogsDirectory = value; }
@@ -279,7 +281,7 @@ namespace GreenSQA.AiMaps.CustomLogic
       return TestRunDefinition.GetTRD(testLogic, beforeTestLogic, afterTestLogic);
     }
 
-    public void RunTest(Action myTestLogic, Action beforeTestLogic = null, Action afterTestLogic = null, long AdditionalMilliseconds = 0, string trait = "")
+    public void RunTest(Action myTestLogic, Action beforeTestLogic = null, Action afterTestLogic = null, long additionalMilliseconds = 0, string trait = "")
     {
       MetricsInfoAttribute myMetricInfo = SetupTestAttributes(myTestLogic, trait);
       long elapsedMilliseconds = 0;
@@ -310,7 +312,7 @@ namespace GreenSQA.AiMaps.CustomLogic
         dtInit = DateTime.Now;
         myTestLogic();
 
-        elapsedMilliseconds = (long)(DateTime.Now - dtInit).TotalMilliseconds + AdditionalMilliseconds - EvidencesManager.ElapsedTimeTakingEvidences;
+        elapsedMilliseconds = (long)(DateTime.Now - dtInit).TotalMilliseconds + additionalMilliseconds - EvidencesManager.ElapsedTimeTakingEvidences;
         JUnitReportHelper.WriteReportData(elapsedMilliseconds, thisModel.ExecutionContext);
         Console.WriteLine("[INFO] Test Passed!");
 
@@ -325,7 +327,7 @@ namespace GreenSQA.AiMaps.CustomLogic
       }
       catch (Exception ex)
       {
-        elapsedMilliseconds = (long)(DateTime.Now - dtInit).TotalMilliseconds + AdditionalMilliseconds - EvidencesManager.ElapsedTimeTakingEvidences;
+        elapsedMilliseconds = (long)(DateTime.Now - dtInit).TotalMilliseconds + additionalMilliseconds - EvidencesManager.ElapsedTimeTakingEvidences;
         this.TestRunFailed = true;
         this.TestRunError = ex.Message;
         Console.WriteLine("[ERROR] " + ex.Message);
@@ -340,22 +342,30 @@ namespace GreenSQA.AiMaps.CustomLogic
             EvidencesManager.TakeEvidence(thisModel.SeDriver, "Error", formatedError, GetEvidencePath(), myMetricInfo.TakeScreenshotOnError);
           }
 
-          if (!EvidencesManager.IsScreenshotFailed)
+          if (EvidencesManager.IsScreenshotFailed && AbortFailedTestWithScreenshotError)
           {
-            TFunc(myMetricInfo.ExcellentTime, myMetricInfo.ToleratingTime, elapsedMilliseconds, false, true);
+            Console.WriteLine("[WARNING] Test aborted because taking screenshot evidence of the error failed");
+            EvidencesManager.Reset(true);
           }
           else
           {
-            Console.WriteLine("[WARNING] Test aborted because taking evidence of the error failed");
-            EvidencesManager.Reset(true);
+            TFunc(myMetricInfo.ExcellentTime, myMetricInfo.ToleratingTime, elapsedMilliseconds, false, true);
           }
         }
       }
       finally
       {
-        if (this.TestRunFailed && !EvidencesManager.IsScreenshotFailed)
+        if (this.TestRunFailed)
         {
-          RunAfterTest(afterTestLogic, myMetricInfo.TakeScreenshotOnError);
+          if (EvidencesManager.IsScreenshotFailed && AbortFailedTestWithScreenshotError)
+          {
+            Console.WriteLine("[WARNING] AfterTest aborted because taking screenshot evidence of the error failed");
+          }
+
+          else
+          {
+            RunAfterTest(afterTestLogic, myMetricInfo.TakeScreenshotOnError);
+          }
         }
         Console.WriteLine("[INFO] Test finished");
       }
