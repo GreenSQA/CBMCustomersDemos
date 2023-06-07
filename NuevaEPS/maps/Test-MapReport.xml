@@ -1,0 +1,12 @@
+<testsuites>
+  <testsuite name="GreenSQA">
+    <testcase classname="k" name="AutomatedTestCase" time="63821750331.563" />
+    <testcase classname="k" name="AutomatedTestCase" time="638217503391.297" />
+  </testsuite>
+  <testsuite name="SuiteDescarCertificado">
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="Login" time="4.552" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="DescargaCertificado" time="52926.597" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="DescargaCertificado" time="53886.824" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="DescargaCertificado" time="14.655" />
+  </testsuite>
+</testsuites>
