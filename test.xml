@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Say voice="woman" language="es">Hola, esta es una prueba del sistema IVR. Por favor, escuche el mensaje y confirme si es correcto.</Say>
+  <Say>Hello World</Say>
 </Response>
