@@ -12,5 +12,9 @@
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="DescargaCertificado" time="75273.724" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="DescargaCertificado" time="76237.215" />
     <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="DescargaCertificado" time="20.971" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="Login" time="4.411" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="DescargaCertificado" time="5009.559" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="DescargaCertificado" time="51157.466" />
+    <testcase classname="GreenSQA.AiMaps.CustomLogic.SmartMap+Monitor" name="DescargaCertificado" time="16.621" />
   </testsuite>
 </testsuites>
